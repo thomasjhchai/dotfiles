@@ -6,18 +6,14 @@ filetype plugin indent on
 set term=screen-256color
 set t_ut=
 
-"for solarized plugin
-syntax enable
-let g:solarized_termcolors=256
-let g:solarized_degrade=1
-set background=dark
-colorscheme solarized
-
 " Show statusbar
 set laststatus=2
 
 "set line number
-set number
+set relativenumber
+colorscheme monokai
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
 
 "for syntastic plugins
 set statusline+=%#warningmsg#
@@ -36,6 +32,9 @@ let g:javascript_plugin_flow = 1
 
 "for vim-airline theme
 let g:airline_solarized_bg='dark'
+
+"for ctrlp plugin
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "turn off bell
 set visualbell

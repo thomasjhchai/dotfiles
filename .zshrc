@@ -1,16 +1,16 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+  export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/tjunkie/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-#ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="cobalt2"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 # Config for powerlever9k
 #POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time context dir vcs)
@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # zstyle ':completion:*' completer _expand _complete _correct _approximate
 # zstyle ':completion:*' format 'Completing %d'
 # zstyle ':completion:*' group-name ''
- zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
+# zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
 # zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
  zstyle ':completion:*' list-colors ''
 # zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
