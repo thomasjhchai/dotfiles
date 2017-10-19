@@ -42,3 +42,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set visualbell
 set t_vb=
 
+" Make `jj` and `jk` throw you into normal mode
+inoremap jj <esc>
+inoremap jk <esc>
+
