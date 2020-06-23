@@ -1,6 +1,6 @@
 # set alias 
 alias cddev="cd ~/Dropbox/development"
-alias ll="ls-l"
+alias ll="ls -l"
 alias lla="ls -la"
 alias dm="docker-machine"
 alias dc ="docker-compose"
