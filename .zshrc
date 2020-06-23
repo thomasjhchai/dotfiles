@@ -1,8 +1,9 @@
 # If you come from bash you might have to change your $PATH..
-  export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+
 
 # Disable homebrew cask from throwing github error
 export HOMEBREW_NO_GITHUB_API=1
@@ -116,3 +117,6 @@ source $ZSH/oh-my-zsh.sh
 
 # zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 # zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+# Prompt with hostname
+export PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
