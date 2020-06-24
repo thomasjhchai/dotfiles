@@ -4,6 +4,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+#set Right hand side promot to show hostname
+export export RPROMPT="%F{238} %K{46}%n@%m"
 
 # Disable homebrew cask from throwing github error
 export HOMEBREW_NO_GITHUB_API=1
