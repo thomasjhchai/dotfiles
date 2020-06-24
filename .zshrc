@@ -12,8 +12,7 @@ export HOMEBREW_NO_GITHUB_API=1
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-#ZSH_THEME="cobalt2"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="cobalt2"
 #ZSH_THEME="powerlevel9k/powerlevel9k"
 # Config for powerlever9k
 #POWERLEVEL9K_PROMPT_ON_NEWLINE=true
