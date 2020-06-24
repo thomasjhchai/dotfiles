@@ -8,6 +8,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Disable homebrew cask from throwing github error
 export HOMEBREW_NO_GITHUB_API=1
 
+# Fixed tmux zsh autosuggestion bug
+export TERM=xterm-256color
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -113,7 +116,7 @@ source $ZSH/oh-my-zsh.sh
  zstyle ':completion:*' list-colors ''
 # zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 # zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
- zstyle ':completion:*' menu select #=long
+ zstyle ':completion:*' menu select long
 # zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 # zstyle ':completion:*' use-compctl false
 # zstyle ':completion:*' verbose true
