@@ -128,5 +128,4 @@ source $ZSH/oh-my-zsh.sh
 # zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 # zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Prompt with hostname
-#export PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
+eval `ssh-agent`
