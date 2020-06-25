@@ -132,4 +132,4 @@ source $ZSH/oh-my-zsh.sh
 # zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #start ssh-agent during login session
-eval `ssh-agent`
+#eval `ssh-agent`
