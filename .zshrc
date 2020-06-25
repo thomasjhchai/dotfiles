@@ -107,6 +107,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias graph="git log --all --decorate --oneline --graph"
+#
 #
 # Use modern completion system
  autoload -Uz compinit
