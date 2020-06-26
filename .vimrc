@@ -46,3 +46,5 @@ set t_vb=
 inoremap jj <esc>
 inoremap jk <esc>
 
+"clear screen upon quit
+au VimLeave * :!clear
