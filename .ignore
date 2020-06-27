@@ -1,0 +1,25 @@
+
+#use for fd to ignore certain directories and files
+
+.DS_Store
+Applications/*
+Downloads/*
+Dropbox/*
+iCloud\ Drive\ \(Archive\)/*
+Google\ Drive\ File\ Stream/*
+Library/*
+Movies/*
+Music/*
+OneDrive/*
+Pictures/*
+!.vimrc
+!.zshrc
+!.alias
+!.zprofile
+!.ignore
+!.tmux.conf
+!.gitconfig
+!.gitignore*
+!/.ssh/
+
+
