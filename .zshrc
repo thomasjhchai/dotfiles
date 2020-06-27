@@ -147,7 +147,7 @@ if [ "$(uname -s)" = "Linux" ]; then
 	export FD_FILENAME="fdfind" # fix Ubuntu fd naming difference
 else
 	export FZF_OS_ENV_PATH="/usr/local/opt/fzf/shell/"
-	export FD_FILENAME="fd" # fix Ubuntu fd naming difference
+	export FD_FILENAME="fd" 
 fi
 
 # Auto-completion
@@ -161,6 +161,20 @@ source "${FZF_OS_ENV_PATH}/key-bindings.zsh" 2> /dev/null
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND="${FD_FILENAME} . $HOME"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="${FD_FILENAME} -t d . $HOME"
+export FZF_DEFAULT_COMMAND="${FD_FILENAME} --ignore-file ~/.ignore . $HOME"
+export FZF_DEFAULT_OPTS='--no-height --no-reverse'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" 
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+#export FZF_CTRL_T_OPTS="--preview '(bat --color "always" {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_ALT_C_COMMAND="${FD_FILENAME} -t d . $HOME" # search HOME directory only
+export FZF_COMPLETION_OPTS='--preview="head -$LINES {}" --color light --margin 5,20'
+
+# fzf fuzzy completion ignore files define in .ignore file
+_fzf_compgen_path() { 
+  ${FD_FILENAME} --ignore-file ~/.ignore . "$1" }
+
+_fzf_compgen_dir() { 
+  ${FD_FILENAME} --type d --ignore-file ~/.ignore . "$1" }
+
+
