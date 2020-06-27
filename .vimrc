@@ -36,7 +36,7 @@ let g:javascript_plugin_flow = 1
 let g:airline_solarized_bg='dark'
 
 "for ctrlp plugin
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "turn off bell
 set visualbell
