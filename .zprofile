@@ -1,6 +1,6 @@
 
 
-if [ "$(uname -s)" = "Linux" ]; then
+if [[ $OSTYPE = linux* ]]; then
 	### START-Keychain ###
 	## Let  re-use ssh-agent and/or gpg-agent between logins
 	export HOSTNAME="$(uname -n)"

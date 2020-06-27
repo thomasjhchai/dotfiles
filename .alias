@@ -1,6 +1,29 @@
-# set alias 
-alias cddev="cd ~/Dropbox/development"
+# OS specific aliases
+
+#if MacOS
+if [[ $OSTYPE  = darwin* ]]; then   
+	alias cddev="cd ~/Dropbox/development"
+#if Linux
+else  
+	alias fd="fdfind" #Ubuntu use fd-find due to some naming conflict"
+fi
+
+
+
+# set global aliases 
+#
+# directories & files
 alias ll="ls -l"
 alias lla="ls -la"
+
+# docker
 alias dm="docker-machine"
 alias dc ="docker-compose"
+
+# git 
+alias graph="git log --all --decorate --oneline --graph"
+
+
+# global aliases [example alias -g G="| grep" --> ls G keyword]
+alias -g G="| grep"
+alias -g M="| more"

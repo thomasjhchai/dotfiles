@@ -135,3 +135,30 @@ alias graph="git log --all --decorate --oneline --graph"
 
 #start ssh-agent during login session
 #eval `ssh-agent`
+
+# load .alias file
+[ -f ~/.alias  ] && source ~/.alias
+
+# load fzf key-binding and auto-completion
+#
+# Check OS version and set proper enviroment
+if [ "$(uname -s)" = "Linux" ]; then
+	export FZF_OS_ENV_PATH="/usr/share/doc/fzf/examples/"
+else
+	export FZF_OS_ENV_PATH="/usr/local/opt/fzf/shell/"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "${FZF_OS_ENV_PATH}/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "${FZF_OS_ENV_PATH}/key-bindings.zsh" 2> /dev/null
+#
+
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
