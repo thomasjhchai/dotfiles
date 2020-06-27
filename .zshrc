@@ -144,8 +144,10 @@ alias graph="git log --all --decorate --oneline --graph"
 # Check OS version and set proper enviroment
 if [ "$(uname -s)" = "Linux" ]; then
 	export FZF_OS_ENV_PATH="/usr/share/doc/fzf/examples/"
+	export FD_FILENAME="fdfind" # fix Ubuntu fd naming difference
 else
 	export FZF_OS_ENV_PATH="/usr/local/opt/fzf/shell/"
+	export FD_FILENAME="fd" # fix Ubuntu fd naming difference
 fi
 
 # Auto-completion
@@ -159,6 +161,6 @@ source "${FZF_OS_ENV_PATH}/key-bindings.zsh" 2> /dev/null
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_DEFAULT_COMMAND="${FD_FILENAME} . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+export FZF_ALT_C_COMMAND="${FD_FILENAME} -t d . $HOME"
