@@ -9,3 +9,6 @@ if [[ $OSTYPE = linux* ]]; then
 	#### End-Keychain ###
 fi
 
+# display login screen
+neofetch
+
