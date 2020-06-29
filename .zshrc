@@ -107,7 +107,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias graph="git log --all --decorate --oneline --graph"
 #
 #
 # Use modern completion system
@@ -177,5 +176,9 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() { 
   ${FD_FILENAME} --type d --ignore-file ~/.ignore . "$1" }
 
-
+# display hostname beginning of the prompt 
 export PROMPT='%m'$PROMPT
+
+# key bindings
+bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
+
