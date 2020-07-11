@@ -133,3 +133,6 @@
 "if has ("nvim")
 "	echo "NVIM"
 "endif
+
+"clear screen upon quit
+au VimLeave * :!clear

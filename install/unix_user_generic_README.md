@@ -93,3 +93,10 @@
 
 ## Setup terminal to login tmux session
   - mosh terminaljunkie -- sh -c "tmux attach || tmux new -s default -n main"
+
+## fzf keystrokes
+  - <C-t> search for files
+  - <M-c> search for directory
+  - `<command> ** <tab> ` eg. `vim ** <tab>` to execute command of searched files
+
+
