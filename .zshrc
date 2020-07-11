@@ -7,8 +7,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-#set Right hand side promot to show hostname
-#export export RPROMPT="%F{238} %K{46}%n@%m"
+# set Right hand side promot to show hostname
+# export export RPROMPT="%F{238} %K{46}%n@%m"
 
 # Disable homebrew cask from throwing github error
 export HOMEBREW_NO_GITHUB_API=1
@@ -16,8 +16,15 @@ export HOMEBREW_NO_GITHUB_API=1
 # Fixed tmux zsh autosuggestion bug
 export TERM=xterm-256color
 
-#for mosh connection from Mac to server
+# for mosh connection from Mac to server
 export LC_CTYPE="en_US.UTF-8"
+
+# set default EDITOR
+if type "nvim" > /dev/null; then
+    export EDITOR="nvim"
+else
+    export EDITOR="vim"
+fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
