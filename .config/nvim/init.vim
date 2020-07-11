@@ -1,13 +1,12 @@
 " Basic Setting {{{
-
     set nocompatible            " disable compatibility to old-time vi
     set showmatch               " show matching brackets.
     set ignorecase              " case insensitive matching
-    set termguicolors           " set terminal to using true colors
 
     set hlsearch                " highlight search results
     highlight Search cterm=none ctermbg=3 ctermfg=8 " makes search highlight more contrast
 
+    set termguicolors           " set terminal to using true colors
     set splitbelow              " Horizontal splits will automatically be below
     set splitright              " Vertical splits will automatically be to the right
     set cursorline              " Enable line of the current position
@@ -26,7 +25,8 @@
     highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
     augroup vimrc_autocmds
         autocmd!
-        autocmd BufEnter,WinEnter *.py,*.c,*.js call matchadd('OverLength', '\%>78v.\+', -1)
+"        autocmd BufEnter,WinEnter *.py,*.c,*.js call matchadd('OverLength', '\%>78v.\+', -1)       " when using gruvbox highlight got cleared
+        autocmd BufEnter,WinEnter *.py,*.c,*.js call matchadd('ErrorMsg', '\%>78v.\+', -1)          " need this when use gruvbox 
     augroup END
 
 " }}}
@@ -100,6 +100,7 @@
         Plug 'vim-airline/vim-airline'		" for status bar
         Plug 'vim-airline/vim-airline-themes'
         Plug 'Yggdroot/indentLine'          " displaying thin vertical lines at each indentation level for code indented with spaces"
+        Plug 'lilydjwg/colorizer'           " colorize all text in the form #rgb
 
         " Color Schemes
         Plug 'morhetz/gruvbox'              
