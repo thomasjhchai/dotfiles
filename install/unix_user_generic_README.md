@@ -62,6 +62,8 @@
       - sudo apt-get install python-certbot-nginx
       - sudo ufw to add port to firewall  
       - more info at https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
+      - to renew or add ssl
+          - sudo certbot --expand -d terminaljunkie.com -d www.terminaljunkie.com
 
   - mosh server setup (for ipad access to remote server)
       - source: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-mosh-on-a-vps
