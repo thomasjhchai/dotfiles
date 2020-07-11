@@ -16,6 +16,9 @@ fi
 alias ll="ls -l"
 alias lla="ls -la"
 
+# sysyem
+alias ps="ps aux"
+
 # docker
 alias dm="docker-machine"
 alias dc ="docker-compose"
@@ -23,7 +26,16 @@ alias dc ="docker-compose"
 # git 
 alias graph="git log --all --decorate --oneline --graph"
 
+# development
+alias python="python3" # to overwrite executing old version
 
 # global aliases [example alias -g G="| grep" --> ls G keyword]
 alias -g G="| grep"
 alias -g M="| more"
+
+# check if neovim exist
+if  type "nvim" > /dev/null; then
+	alias vi="nvim"
+else
+	alias vi="vim"
+fi
