@@ -23,13 +23,17 @@
           - edit /etc/ssh/sshd_config
               set PermitRootLogin no
               set PasswordAuthentication no (note: when set to NO, can't do ssh-copy-id from client side)
-          - sudo systemctl reload sshd.service
+          - sudo systemctl restart sshd
           
           - edit /etc/ssh/ssh_config
               set PasswordAuthentication no 
       - client side
           - ssh-keygen -t rsa -b 4096
           - ssh-copy-id <username>@<remote-server> OR copy id_rsa.pub key to remote authorized_keys file
+          - SSH Troubleshoot
+-             if having issue try this
+- 	          eval `ssh-agent`
+- 	          ssh-add
           - install keychain (for linux only; so that we don't have to run ssh-agent and ssh-add all the time)
           - ssh-add -K ~/.ssh/id_rsa (for MacOS only)
               - source: https://www.cyberciti.biz/faq/ubuntu-debian-linux-server-install-keychain-apt-get-command/
@@ -37,7 +41,7 @@
               - for MacOS (add this to ~/.ssh/config
                   Host *
                   AddKeysToAgent yes
-                  UseKeychain yes
+                  UseKeychain yes   # only for MacOS
                   IdentityFile ~/.ssh/id_rsa
 
                   Host terminaljunkie
@@ -47,7 +51,7 @@
 
               - for Linux remote server (add this to ~/.ssh/config
                   Host *
-                  IgnoreUnknown UseKeychain
+                  IgnoreUnknown UseKeychain   # disable UseKeychain for Linux
                   UseKeychain yes
                   IdentityFile ~/.ssh/id_rsa
 
@@ -83,3 +87,7 @@
   13) neofetch
   14) cmake (for macos)
   15) docker
+
+
+## Setup terminal to login tmux session
+  - mosh terminaljunkie -- sh -c "tmux attach || tmux new -s default -n main"
