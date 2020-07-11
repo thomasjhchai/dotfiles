@@ -30,8 +30,29 @@
       - client side
           - ssh-keygen -t rsa -b 4096
           - ssh-copy-id <username>@<remote-server> OR copy id_rsa.pub key to remote authorized_keys file
+          - install keychain (for linux only; so that we don't have to run ssh-agent and ssh-add all the time)
+          - ssh-add -K ~/.ssh/id_rsa (for MacOS only)
+              - source: https://www.cyberciti.biz/faq/ubuntu-debian-linux-server-install-keychain-apt-get-command/
+
+              - for MacOS (add this to ~/.ssh/config
+                  Host *
+                  AddKeysToAgent yes
+                  UseKeychain yes
+                  IdentityFile ~/.ssh/id_rsa
+
+                  Host terminaljunkie
+                  HostName terminaljunkie.com
+                  User tjunkie
+                  IdentityFile ~/.ssh/id_rsa
+
+              - for Linux remote server (add this to ~/.ssh/config
+                  Host *
+                  IgnoreUnknown UseKeychain
+                  UseKeychain yes
+                  IdentityFile ~/.ssh/id_rsa
 
   - setup nginx
+      - copy config files from repo (conf_files) to /etc/nginx/sites-available and linke it to sites-enabled
   - setup Let's Encrypt
       - sudo add-apt-repository ppa:certbot/certbot
       - sudo apt-get install python-certbot-nginx

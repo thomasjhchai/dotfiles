@@ -20,12 +20,12 @@
     filetype plugin indent on   " allows auto-indenting depending on file type
     syntax on                   " syntax highlighting
 
-    " set 80 column border for good coding style. Text overlow will be
+    " set 79 column border for good coding style. Text overlow will be
     " highlighted
     highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
     augroup vimrc_autocmds
         autocmd!
-        autocmd BufEnter,WinEnter * call matchadd('OverLength', '\%>80v.\+', -1)
+        autocmd BufEnter,WinEnter *.py,*.c,*.js call matchadd('OverLength', '\%>78v.\+', -1)
     augroup END
 
 " }}}
