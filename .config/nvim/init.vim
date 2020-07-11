@@ -121,7 +121,7 @@
         "let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
         let g:airline_section_warning = ''
         "let g:airline#extensions#tabline#enabled = 1
-        let g:airline_theme = 'dracula'
+        let g:airline_theme = 'gruvbox'
 
     " Limelight
         " Color name (:help cterm-colors) or ANSI code
