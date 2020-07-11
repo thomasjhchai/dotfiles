@@ -3,6 +3,7 @@
     set nocompatible            " disable compatibility to old-time vi
     set showmatch               " show matching brackets.
     set ignorecase              " case insensitive matching
+    set termguicolors           " set terminal to using true colors
 
     set hlsearch                " highlight search results
     highlight Search cterm=none ctermbg=3 ctermfg=8 " makes search highlight more contrast
@@ -98,11 +99,16 @@
         " Aesthetics
         Plug 'vim-airline/vim-airline'		" for status bar
         Plug 'vim-airline/vim-airline-themes'
+        Plug 'Yggdroot/indentLine'          " displaying thin vertical lines at each indentation level for code indented with spaces"
+
+        " Color Schemes
+        Plug 'morhetz/gruvbox'              
+
+        " General
         Plug 'tpope/vim-fugitive'		    " for git status
         Plug 'junegunn/goyo.vim'
         Plug 'junegunn/limelight.vim'
         Plug 'haya14busa/is.vim'            " for search highlight improvement
-        Plug 'Yggdroot/indentLine'          " displaying thin vertical lines at each indentation level for code indented with spaces"
 
     call plug#end()
 
@@ -115,6 +121,7 @@
         "let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
         let g:airline_section_warning = ''
         "let g:airline#extensions#tabline#enabled = 1
+        let g:airline_theme = 'dracula'
 
     " Limelight
         " Color name (:help cterm-colors) or ANSI code
@@ -127,6 +134,10 @@
 
         " Default: 0.5
         let g:limelight_default_coefficient = 0.7
+
+    " Set colorscheme
+        let g:gruvbox_contrast_light = 'hard'
+        colorscheme gruvbox
 
 " }}}
 
