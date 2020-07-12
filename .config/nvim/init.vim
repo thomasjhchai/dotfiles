@@ -5,7 +5,7 @@
 
     set hlsearch                " highlight search results
     highlight Search cterm=none ctermbg=3 ctermfg=8 " makes search highlight more contrast
-
+    
     set termguicolors           " set terminal to using true colors
     set splitbelow              " Horizontal splits will automatically be below
     set splitright              " Vertical splits will automatically be to the right
@@ -100,8 +100,7 @@
         Plug 'vim-airline/vim-airline'		" for status bar
         Plug 'vim-airline/vim-airline-themes'
         Plug 'Yggdroot/indentLine'          " displaying thin vertical lines at each indentation level for code indented with spaces"
-        Plug 'lilydjwg/colorizer'           " colorize all text in the form #rgb
-
+        Plug 'norcalli/nvim-colorizer.lua'
         " Color Schemes
         Plug 'morhetz/gruvbox'              
 
@@ -138,7 +137,11 @@
 
     " Set colorscheme
         let g:gruvbox_contrast_light = 'hard'
+        let g:gruvbox_invert_selection = 0
         colorscheme gruvbox
+
+    " Set colorizer
+        lua require'colorizer'.setup()
 
 " }}}
 
