@@ -29,7 +29,8 @@
   10) One Drive
   11) Logitech Option
   12) Spotify
-  13) 
+  13) Fuse
+  14) sshfs (requires Fuse)
 
 ## Application for Unix CLI via brew
   See Unix User Installation 

@@ -1,5 +1,5 @@
 
-execute pathogen#infect()
+"execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
@@ -16,24 +16,24 @@ set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
 "for syntastic plugins
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_loc_list_height = 5
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 1
 
 "for vim-javascript plugin
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_plugin_flow = 1
-
+"let g:javascript_plugin_jsdoc = 1
+"let g:javascript_plugin_ngdoc = 1
+"let g:javascript_plugin_flow = 1
+"
 "for vim-airline theme
-let g:airline_solarized_bg='dark'
+"let g:airline_solarized_bg='dark'
 
 "for ctrlp plugin
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
