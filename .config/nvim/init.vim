@@ -105,10 +105,10 @@
         Plug 'morhetz/gruvbox'              
 
         " General
-        Plug 'tpope/vim-fugitive'		    " for git status
+        Plug 'tpope/vim-fugitive'	    	" for git status
         Plug 'junegunn/goyo.vim'
         Plug 'junegunn/limelight.vim'
-        Plug 'haya14busa/is.vim'            " for search highlight improvement
+        Plug 'haya14busa/is.vim'            	" for search highlight improvement
 
     call plug#end()
 
