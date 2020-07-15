@@ -12,7 +12,7 @@ else
     # check package manager for different distro
     if [ -e "/usr/bin/apt" ] ; then # Apt-based distros (Debian, Ubuntu, etc.)
         alias paci="sudo apt install"
-        alias pacu="sudo apt update && apt upgrade"
+        alias pacu="sudo apt update && sudo apt upgrade"
     elif [ -e "/usr/bin/pacman" ] ; then # Arch Linux
         alias paci="sudo pacman -S"
         alias pacu="sudo pacman -Syu"
