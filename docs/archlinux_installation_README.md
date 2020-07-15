@@ -9,7 +9,7 @@
 			- default arch-*
 		- edit /boot/loader/entries/arch.conf
 			- title 	arch-vm (or any name you desire)
-			- linux i	/vmlinuz-linux
+			- linux 	/vmlinuz-linux
 			- initrd 	/initramfs-linux.img
 			- option	root=/dev/sda3 rw (or any partion pointing to Linux partition)
 4) After reboot

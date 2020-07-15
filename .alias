@@ -3,9 +3,20 @@
 #if MacOS
 if [[ $OSTYPE  = darwin* ]]; then   
 	alias cddev="cd ~/Dropbox/development"
+    alias paci="brew install"
+    alias pacu="brew upgrade"
 #if Linux
 else  
 	alias fd="fdfind" #Ubuntu use fd-find due to some naming conflict"
+
+    # check package manager for different distro
+    if [ -e "/usr/bin/apt" ] ; then # Apt-based distros (Debian, Ubuntu, etc.)
+        alias paci="sudo apt install"
+        alias pacu="sudo apt update && apt upgrade"
+    elif [ -e "/usr/bin/pacman" ] ; then # Arch Linux
+        alias paci="sudo pacman -S"
+        alias pacu="sudo pacman -Syu"
+    fi
 fi
 
 
@@ -15,6 +26,7 @@ fi
 # directories & files
 alias ll="ls -l"
 alias lla="ls -la"
+alias rm="rm -i"
 
 # sysyem
 alias ps="ps aux"
@@ -39,3 +51,4 @@ if  type "nvim" > /dev/null; then
 else
 	alias vi="vim"
 fi
+
