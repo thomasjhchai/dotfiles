@@ -39,8 +39,11 @@ alias dc ="docker-compose"
 alias graph="git log --all --decorate --oneline --graph"
 
 # development
-alias python="python3" # to overwrite executing old version
-alias py="python3" # to overwrite executing old version
+
+# to overwrite executing old version
+alias python="python3" 
+alias py="python3" 
+alias pip="pip3"
 
 # global aliases [example alias -g G="| grep" --> ls G keyword]
 alias -g G="| grep"
