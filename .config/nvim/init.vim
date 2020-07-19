@@ -1,12 +1,16 @@
-" Basic Setting {{{
+ " Basic Setting {{{
     set nocompatible            " disable compatibility to old-time vi
     set showmatch               " show matching brackets.
     set ignorecase              " case insensitive matching
 
     set hlsearch                " highlight search results
     highlight Search cterm=none ctermbg=3 ctermfg=8 " makes search highlight more contrast
-    
-    set termguicolors           " set terminal to using true colors
+
+    if (has("termguicolors"))
+        set t_8f=\[[38;2;%lu;%lu;%lum
+        set t_8b=\[[48;2;%lu;%lu;%lum
+        set termguicolors           " set terminal to using true colors
+    endif
     set splitbelow              " Horizontal splits will automatically be below
     set splitright              " Vertical splits will automatically be to the right
     set cursorline              " Enable line of the current position
@@ -99,8 +103,9 @@
         " Aesthetics
         Plug 'vim-airline/vim-airline'		" for status bar
         Plug 'vim-airline/vim-airline-themes'
-        Plug 'Yggdroot/indentLine'          " displaying thin vertical lines at each indentation level for code indented with spaces"
+        Plug 'Yggdroot/indentLine'          " display indentation level for codes"
         Plug 'norcalli/nvim-colorizer.lua'
+
         " Color Schemes
         Plug 'morhetz/gruvbox'              
 
@@ -108,7 +113,7 @@
         Plug 'tpope/vim-fugitive'	    	" for git status
         Plug 'junegunn/goyo.vim'
         Plug 'junegunn/limelight.vim'
-        Plug 'haya14busa/is.vim'            	" for search highlight improvement
+        Plug 'haya14busa/is.vim'           	" for search highlight improvement
 
     call plug#end()
 
@@ -140,8 +145,10 @@
         let g:gruvbox_invert_selection = 0
         colorscheme gruvbox
 
-    " Set colorizer
-        lua require'colorizer'.setup()
+    " Set colorizer"
+        if (has("termguicolors"))
+            lua require'colorizer'.setup()
+        endif
 
 " }}}
 
