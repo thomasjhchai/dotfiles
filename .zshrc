@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH..
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
 
 # setting up config path based on XDG specification
 export XDG_CONFIG_HOME=$HOME/.config
