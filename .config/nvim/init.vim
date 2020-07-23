@@ -41,11 +41,6 @@
     set hlsearch                " highlight search results
     highlight Search cterm=none ctermbg=3 ctermfg=8 " makes search highlight more contrast
 
-"    if (has("termguicolors"))
-"        set t_8f=\[[38;2;%lu;%lu;%lum
-"        set t_8b=\[[48;2;%lu;%lu;%lum
-"        set termguicolors           " set terminal to using true colors
-"    endif
     set splitbelow              " Horizontal splits will automatically be below
     set splitright              " Vertical splits will automatically be to the right
     set cursorline              " Enable line of the current position
@@ -55,6 +50,8 @@
     set shiftwidth=4            " width for autoindents
     set relativenumber          " add line numbers "
     set autoindent              " indent a new line the same amount as the line just typed
+    set scrolloff=7             " bottom page 7 line - end of scroll
+    set backspace=indent,eol,start  
     set wildmode=longest,list   " get bash-like tab completions
     filetype plugin indent on   " allows auto-indenting depending on file type
     syntax on                   " syntax highlighting
@@ -138,7 +135,7 @@
         " Aesthetics
         Plug 'vim-airline/vim-airline'		" for status bar
         Plug 'vim-airline/vim-airline-themes'
-        Plug 'Yggdroot/indentLine'          " display indentation level for codes"
+        Plug 'Yggdroot/indentLine'          " display indentation level for codes
         Plug 'norcalli/nvim-colorizer.lua'
 
         " Color Schemes
@@ -149,6 +146,8 @@
         Plug 'junegunn/goyo.vim'
         Plug 'junegunn/limelight.vim'
         Plug 'haya14busa/is.vim'           	" for search highlight improvement
+        Plug 'jiangmiao/auto-pairs'
+        Plug 'SirVer/ultisnips'             " Snippets  
 
     call plug#end()
 
