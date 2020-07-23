@@ -148,6 +148,7 @@
         Plug 'haya14busa/is.vim'           	" for search highlight improvement
         Plug 'jiangmiao/auto-pairs'
         Plug 'SirVer/ultisnips'             " Snippets  
+        Plug 'airblade/vim-gitgutter'
 
     call plug#end()
 
