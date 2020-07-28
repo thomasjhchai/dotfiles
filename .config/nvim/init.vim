@@ -150,7 +150,10 @@
         Plug 'SirVer/ultisnips'             " Snippets  
         Plug 'airblade/vim-gitgutter'
 
-    call plug#end()
+        " Coding
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}            " Intellisense auto complete
+
+        call plug#end()
 
 " }}}
 
