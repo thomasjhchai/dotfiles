@@ -5,9 +5,17 @@ if [[ $OSTYPE  = darwin* ]]; then
 	alias cddev="cd ~/Dropbox/development"
     alias paci="brew install"
     alias pacu="brew upgrade"
+    # to overwrite executing old version. Use Brew version instead os Mac default
+    alias python="/usr/local/bin/python3" 
+    alias py="/usr/local/bin/python3" 
+    alias pip="/usr/local/bin/pip3"
 #if Linux
 else  
 	alias fd="fdfind" #Ubuntu use fd-find due to some naming conflict"
+    # to overwrite executing old version
+    alias python="python3" 
+    alias py="python3" 
+    alias pip="pip3"
 
     # check package manager for different distro
     if [ -e "/usr/bin/apt" ] ; then # Apt-based distros (Debian, Ubuntu, etc.)
@@ -40,10 +48,6 @@ alias graph="git log --all --decorate --oneline --graph"
 
 # development
 
-# to overwrite executing old version
-alias python="python3" 
-alias py="python3" 
-alias pip="pip3"
 
 # global aliases [example alias -g G="| grep" --> ls G keyword]
 alias -g G="| grep"
