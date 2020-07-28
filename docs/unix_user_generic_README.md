@@ -82,13 +82,14 @@
   6)  fzf
   7)  fd (for macos) or fd-find (ubuntu) - for use with fzf
   8)  nodejs
-  9)  python3 (if not available in the system)
-  10) mosh
-  11) tree
-  12) tmux
-  13) neofetch
-  14) cmake (for macos)
-  15) docker
+  9)  npm
+  10)  python3 (if not available in the system)
+  11) mosh
+  12) tree
+  13) tmux
+  14) neofetch
+  15) cmake (for macos)
+  16) docker
 
 
 ## Setup terminal to login tmux session
