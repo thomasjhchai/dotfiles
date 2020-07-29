@@ -13,6 +13,7 @@ source $XDG_CONFIG_HOME/nvim/src/plug-config/nvim-colorizer.vim
 source $XDG_CONFIG_HOME/nvim/src/plug-config/nvim-colorizer.vim
 source $XDG_CONFIG_HOME/nvim/src/plug-config/indentline.vim
 source $XDG_CONFIG_HOME/nvim/src/plug-config/coc.vim
+source $XDG_CONFIG_HOME/nvim/src/plug-config/fzf.vim
 
 " }}}
 
