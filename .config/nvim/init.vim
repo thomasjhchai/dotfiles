@@ -88,7 +88,7 @@
 
     " Markdown
     autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
+    
 " }}}
 
 " Basic Mappings {{{
@@ -165,6 +165,7 @@
         let g:airline_section_warning = ''
         "let g:airline#extensions#tabline#enabled = 1
         let g:airline_theme = 'gruvbox'
+        let g:airline#extensions#tabline#enabled = 1
 
     " Limelight
         " Color name (:help cterm-colors) or ANSI code
@@ -187,6 +188,15 @@
         if has('termguicolors')
             lua require'colorizer'.setup()
         endif
+
+    " Set IndentLine
+     let g:indentLine_setConceal = 2
+    " default ''.
+    " n for Normal mode
+    " v for Visual mode
+    " i for Insert mode
+    " c for Command line editing, for 'incsearch'
+    let g:indentLine_concealcursor = "nv"
 
 " }}}
 
@@ -325,7 +335,7 @@
     " Add (Neo)Vim's native statusline support.
     " NOTE: Please see `:h coc-status` for integrations with external plugins that
     " provide custom statusline: lightline.vim, vim-airline.
-    set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+    " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
     
     " Mappings for CoCList
     " Show all diagnostics.
