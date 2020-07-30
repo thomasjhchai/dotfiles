@@ -175,13 +175,13 @@ source "${FZF_OS_ENV_PATH}/key-bindings.zsh" 2> /dev/null
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND="${FD_FILENAME} --ignore-file ~/.ignore . $HOME"
+export FZF_DEFAULT_COMMAND="${FD_FILENAME} --ignore-file ~/.ignore ."
 export FZF_DEFAULT_OPTS='--no-height --no-reverse'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" 
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' --margin 7,20"
 #export FZF_CTRL_T_OPTS="--preview '(bat --color "always" {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview' --margin 7,20"
-export FZF_ALT_C_COMMAND="${FD_FILENAME} -t d . $HOME" # search HOME directory only
+export FZF_ALT_C_COMMAND="${FD_FILENAME} -t d ." # search current directory only
 export FZF_COMPLETION_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' --margin 7,20" 
 
 # fzf fuzzy completion ignore files define in .ignore file
