@@ -32,4 +32,8 @@
     nnoremap <A-a> <C-a>
     nnoremap <A-x> <C-x>
 
+    " Better indenting
+    vnoremap < <gv
+    vnoremap > >gv
+
 " }}}

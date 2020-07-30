@@ -1,9 +1,9 @@
 #if MacOS
 if [[ $OSTYPE  = darwin* ]]; then
     # If you come from bash you might have to change your $PATH..
-    export PATH=$PATH:$HOME/Library/Python/3.8/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin
+    export PATH=$HOME/Library/Python/3.8/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
 else
-    export PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin
+    export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
 fi
 
 # setting up config path based on XDG specification

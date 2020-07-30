@@ -5,7 +5,7 @@
 
     set hlsearch                " highlight search results
     highlight Search cterm=none ctermbg=3 ctermfg=8 " makes search highlight more contrast
-
+    
     set splitbelow              " Horizontal splits will automatically be below
     set splitright              " Vertical splits will automatically be to the right
     set cursorline              " Enable line of the current position
