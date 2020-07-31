@@ -197,3 +197,4 @@ export PROMPT='%m'$PROMPT
 # key bindings
 bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
 
+

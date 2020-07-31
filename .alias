@@ -6,16 +6,16 @@ if [[ $OSTYPE  = darwin* ]]; then
     alias paci="brew install"
     alias pacu="brew upgrade"
     # to overwrite executing old version. Use Brew version instead os Mac default
-    alias python="/usr/local/bin/python3" 
-    alias py="/usr/local/bin/python3" 
-    alias pip="/usr/local/bin/pip3"
+    # alias python="/usr/local/bin/python3" 
+    alias py="python" 
+    # alias pip="/usr/local/bin/pip3"
 #if Linux
 else  
 	alias fd="fdfind" #Ubuntu use fd-find due to some naming conflict"
     # to overwrite executing old version
-    alias python="python3" 
-    alias py="python3" 
-    alias pip="pip3"
+    # alias python="python3" 
+    alias py="python" 
+    # alias pip="pip3"
 
     # check package manager for different distro
     if [ -e "/usr/bin/apt" ] ; then # Apt-based distros (Debian, Ubuntu, etc.)
