@@ -57,4 +57,4 @@
 " }}}
 
 " for python to use virtual environment
-g:python3_host_prog
+let g:python3_host_prog
