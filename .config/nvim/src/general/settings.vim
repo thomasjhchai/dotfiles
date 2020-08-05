@@ -55,3 +55,6 @@
     autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
     
 " }}}
+
+" for python to use virtual environment
+g:python3_host_prog
