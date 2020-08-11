@@ -7,11 +7,10 @@
   4)  Telegram
   5)  WhatsApp
   6)  Magnet
-  7)  LastPass
-  8)  Fantastical
-  9)  HP Smart
-  10) Spark
-  11) Parallel
+  7)  Fantastical
+  8)  HP Smart
+  9) Spark
+  10) Parallel
 
 
 ## Application via websites
@@ -30,7 +29,7 @@
   11) Logitech Option
   12) Spotify
   13) Fuse
-  14) sshfs (requires Fuse)
+  14)  LastPass
 
 ## Application for Unix CLI via brew
   See Unix User Installation 
