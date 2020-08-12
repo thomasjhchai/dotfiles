@@ -63,6 +63,7 @@
           .zprofile
           .alias
           .tmux.conf
+          .gitconfig
           .config/nvim/init.vim
           .config/nvim/src
           .config/nvim/coc-settings.json
