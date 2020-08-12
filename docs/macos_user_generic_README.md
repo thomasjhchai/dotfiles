@@ -1,16 +1,27 @@
 # Macbook Pro Setup
 
 ## Applications via App Store
-  1)  Evernote
-  2)  Todoist
-  3)  iAWriter
-  4)  Telegram
-  5)  WhatsApp
-  6)  Magnet
-  7)  Fantastical
-  8)  HP Smart
-  9) Spark
-  10) Parallel
+  1)  Todoist
+  2)  iAWriter
+  3)  Telegram
+  4)  WhatsApp
+  5)  Magnet
+  6)  Fantastical
+  7)  HP Smart
+  8)  Spark
+  9)  Parallel
+  10) Microsoft 365
+  11) Microsoft 365
+  12) Save To Pocket (Safari Extension)
+  13) Messenger
+  14) Drafts
+  15) Margin Note 3
+  16) Twitter
+  17) XCode
+  18) Good Notes 5
+  19) PDF Pen Pro
+  20) Nord VPN IKE
+  21) Yoink
 
 
 ## Application via websites
@@ -22,14 +33,68 @@
   4)  Chrome
   5)  iTerm2
   6)  Cryptomator
-  7)  Microsoft 365
   8)  Dropbox
-  9)  Google Drive
-  10) One Drive
-  11) Logitech Option
-  12) Spotify
-  13) Fuse
-  14)  LastPass
+  9)  Google Drive File Stream
+  10) Logitech Option
+  11) Spotify
+  12) Fuse
+  13) LastPass
+  14) Evernote
+  15) Bartender
+  16) Hazel
+  17) Alfred
+  18) Kindle
+  19) node.js
 
-## Application for Unix CLI via brew
-  See Unix User Installation 
+## Setup
+
+  iTerm
+    1) download FiraCode font
+    2) download gruvbox colorscheme
+
+  CLI
+    1) install oh-my-zsh
+        chmod 755 /usr/local/share/zsh
+        chmod 755 /usr/local/share/zsh/site-functions
+        install cobalt2-theme
+    2) pull dotfiles repo from git hub
+        symlink 
+          .zshrc
+          .zprofile
+          .alias
+          .tmux.conf
+          .config/nvim/init.vim
+          .config/nvim/src
+          .config/nvim/coc-settings.json
+
+    3) setup neovim
+        mkdir $HOME/.config/nvim
+        install vim-plug
+
+    4) mkdir Repositories folder for all the repos
+
+  Brew
+    1) Python
+        - create sym link for python -> python3
+        - create sym link for pip -> pip3
+        - pip install
+          - neovim
+          - pipenv
+
+    2) tmux
+    3) htop
+    4) neovim
+    5) neofetch
+    6) mosh
+    7) fd
+    8) tree
+    9) fzf
+    10) yarn
+    11) ripgrep
+    12) dash (via cask)
+
+  Setup VSCode
+    install Extension
+      Settings Sync
+        login to github gist and pull all the setting to local
+
