@@ -44,7 +44,6 @@
   16) Hazel
   17) Alfred
   18) Kindle
-  19) node.js
 
 ## Setup
 
@@ -93,6 +92,7 @@
     10) yarn
     11) ripgrep
     12) dash (via cask)
+    13) node
 
   Setup VSCode
     install Extension
