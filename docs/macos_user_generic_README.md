@@ -26,6 +26,8 @@
 
 ## Application via websites
   1)  VSCode
+        for continuos scrolling when hitting h,j,k,l
+        defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
   2)  Homebrew
   3)  Homebrew Cask (for Mac GUI apps)
        3.1)  dash (for API documentation)
@@ -93,6 +95,7 @@
     11) ripgrep
     12) dash (via cask)
     13) node
+    14) lulu (via cask)
 
   Setup VSCode
     install Extension
