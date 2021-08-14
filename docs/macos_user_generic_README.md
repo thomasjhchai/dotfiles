@@ -1,7 +1,6 @@
 # Macbook Pro Setup
 
 ## Applications via App Store
-  1)  Todoist
   2)  iAWriter
   3)  Telegram
   4)  WhatsApp
@@ -32,7 +31,7 @@
   3)  Homebrew Cask (for Mac GUI apps)
        3.1)  dash (for API documentation)
        3.2)  docker
-  4)  Chrome
+  4)  Chrome (via cask)
   5)  iTerm2
   6)  Cryptomator
   8)  Dropbox
@@ -95,7 +94,9 @@
     11) ripgrep
     12) dash (via cask)
     13) node
-    14) lulu (via cask)
+    14) BetterTouchTool (via cask)
+          GoldenChaos preset
+    15) Firefox (via cask)
 
   Setup VSCode
     install Extension
