@@ -9,6 +9,7 @@ if [[ $OSTYPE = linux* ]]; then
 	#### End-Keychain ###
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # display login screen
 neofetch
 
