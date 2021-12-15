@@ -40,8 +40,8 @@ alias rm="rm -i"
 alias ps="ps aux"
 
 # docker
-alias dm="docker-machine"
-alias dc ="docker-compose"
+# alias dm="docker-machine"
+# alias dc ="docker-compose"
 
 # git 
 alias graph="git log --all --decorate --oneline --graph"
