@@ -7,9 +7,11 @@ if [[ $OSTYPE = linux* ]]; then
 	/usr/bin/keychain $HOME/.ssh/id_rsa
 	source $HOME/.keychain/$HOSTNAME-sh
 	#### End-Keychain ###
+elif [[$OSTYPE = darwin*]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 # display login screen
 neofetch
 
