@@ -5,14 +5,19 @@ if [[ $OSTYPE  = darwin* ]]; then
     local NVM_PATH="$HOME/.nvm"
     # If you come from bash you might have to change your $PATH..
     export PATH=:$BREW_PATH:$HOME/.local/bin:$PATH
+
+    # setting up nvm path for macos
+    export NVM_DIR=$NVM_PATH
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 else
+    # setting up nvm path for Ubuntu
+    export NVM_DIR="$HOME/.config/nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
 fi
 
-# setting up nvm path
-export NVM_DIR=$NVM_PATH
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
 # setting up config path based on XDG specification
@@ -209,3 +214,4 @@ export PROMPT='%m'$PROMPT
 bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
 
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
