@@ -1,10 +1,19 @@
 #if MacOS
 if [[ $OSTYPE  = darwin* ]]; then
+    local BREW_PATH="/opt/homebrew/bin"
+    local BREW_OPT_PATH="opt/homebrew/opt"
+    local NVM_PATH="$HOME/.nvm"
     # If you come from bash you might have to change your $PATH..
-    export PATH=:/opt/homebrew/bin/:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
+    export PATH=:$BREW_PATH:$HOME/.local/bin:$PATH
 else
     export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
 fi
+
+# setting up nvm path
+export NVM_DIR=$NVM_PATH
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 
 # setting up config path based on XDG specification
 export XDG_CONFIG_HOME=$HOME/.config
