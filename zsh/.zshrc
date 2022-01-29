@@ -22,6 +22,7 @@ fi
 
 # setting up config path based on XDG specification
 export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
