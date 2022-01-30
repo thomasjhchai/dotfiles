@@ -1,19 +1,19 @@
-source $XDG_CONFIG_HOME/nvim/src/general/functions.vim
-source $XDG_CONFIG_HOME/nvim/src/general/settings.vim
-source $XDG_CONFIG_HOME/nvim/src/keys/mappings.vim
-source $XDG_CONFIG_HOME/nvim/src/vim-plug/plugins.vim
+source $XDG_CONFIG_HOME/nvim/viml/general/functions.vim
+source $XDG_CONFIG_HOME/nvim/viml/general/settings.vim
+source $XDG_CONFIG_HOME/nvim/viml/keys/mappings.vim
+source $XDG_CONFIG_HOME/nvim/viml/vim-plug/plugins.vim
 
 
 " vim-plug execution {{{
 
-source $XDG_CONFIG_HOME/nvim/src/plug-config/vim-airline.vim
-source $XDG_CONFIG_HOME/nvim/src/plug-config/limelight.vim
-source $XDG_CONFIG_HOME/nvim/src/plug-config/gruvbox.vim
-source $XDG_CONFIG_HOME/nvim/src/plug-config/nvim-colorizer.vim
-source $XDG_CONFIG_HOME/nvim/src/plug-config/nvim-colorizer.vim
-source $XDG_CONFIG_HOME/nvim/src/plug-config/indentline.vim
-source $XDG_CONFIG_HOME/nvim/src/plug-config/coc.vim
-source $XDG_CONFIG_HOME/nvim/src/plug-config/fzf.vim
+source $XDG_CONFIG_HOME/nvim/viml/plug-config/vim-airline.vim
+source $XDG_CONFIG_HOME/nvim/viml/plug-config/limelight.vim
+source $XDG_CONFIG_HOME/nvim/viml/plug-config/gruvbox.vim
+source $XDG_CONFIG_HOME/nvim/viml/plug-config/nvim-colorizer.vim
+source $XDG_CONFIG_HOME/nvim/viml/plug-config/nvim-colorizer.vim
+source $XDG_CONFIG_HOME/nvim/viml/plug-config/indentline.vim
+source $XDG_CONFIG_HOME/nvim/viml/plug-config/coc.vim
+source $XDG_CONFIG_HOME/nvim/viml/plug-config/fzf.vim
 
 " }}}
 
