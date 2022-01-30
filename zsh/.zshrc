@@ -177,7 +177,7 @@ if [ "$(uname -s)" = "Linux" ]; then
 	export FZF_OS_ENV_PATH="/usr/share/doc/fzf/examples/"
 	export FD_FILENAME="fdfind" # fix Ubuntu fd naming difference
 else
-	export FZF_OS_ENV_PATH="/usr/local/opt/fzf/shell/"
+	export FZF_OS_ENV_PATH="/opt/homebrew/opt/fzf/shell/"
 	export FD_FILENAME="fd" 
 fi
 
@@ -215,4 +215,3 @@ export PROMPT='%m'$PROMPT
 bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
 
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
