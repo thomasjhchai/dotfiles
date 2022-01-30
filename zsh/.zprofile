@@ -9,7 +9,7 @@ if [[ $OSTYPE = linux* ]]; then
 	#### End-Keychain ###
 elif [[ $OSTYPE = darwin* ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-
+    ssh-add -K ~/.ssh/id_rsa
 fi
 
 # display login screen
