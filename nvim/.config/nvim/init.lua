@@ -4,8 +4,10 @@ require('plugins')
 
 require('functions')
 
+-- colorscheme setting
+require('colorschemes-config.nightfox')
+
 -- packer plugins settings
-require('colorschemes-config.gruvbox')
 require('plugins-config.web-devicons')
 require('plugins-config.nvim-tree')
 require('plugins-config.indentline')
