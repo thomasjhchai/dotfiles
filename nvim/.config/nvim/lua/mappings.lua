@@ -13,10 +13,6 @@ vim.g.mapleader = ' '   -- map <SPACE> as leader
 
 -- Mapping for Plugins
 
--- General Neovim Mappings
-map('i', 'jj', '<ESC>', opts)
-map('i', 'jk', '<ESC>', opts)
-
 -- [[Normal Mode]] --
 
 -- Resizing Windows
@@ -40,6 +36,10 @@ map('n', '<M-k>', ':tabprevious<CR>', opts)
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)
 map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', opts)
 
+-- [[Insert Mode]] -- 
+map('i', 'jj', '<ESC>', opts)
+map('i', 'jk', '<ESC>', opts)
+
 -- [[Visual Mode]] -- 
 
 -- Stay in indent mode
@@ -59,7 +59,7 @@ map("x", "K", ":move '<-2<CR>gv-gv", opts)
 map("x", "<M-j>", ":move '>+1<CR>gv-gv", opts)
 map("x", "<M-k>", ":move '<-2<CR>gv-gv", opts)
 
--- [[Custom Modes]] --
+-- [[Custom Mode]] --
 
 -- Misc Controls
 map('n', '<M-r>', '<cmd>lua reload_lua()<CR>', opts)    -- init.lua quick reload
