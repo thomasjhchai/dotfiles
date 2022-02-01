@@ -17,7 +17,7 @@ endif
         Plug 'Yggdroot/indentLine'          " display indentation level for codes
         Plug 'norcalli/nvim-colorizer.lua'
 
-        " Color Schemes
+       " Color Schemes
         Plug 'morhetz/gruvbox'              
 
         " General
