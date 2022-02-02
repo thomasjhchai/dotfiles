@@ -1,7 +1,5 @@
-local g = vim.g
-
-g.indentLine_fileTypeExclude = {'json', 'markdown'}
-g.indentLine_setConceal = 2
-g.indentLine_color_gui = '#FF5F00'
-g.indentLine_char = '|'
-
+require("indent_blankline").setup {
+    -- for example, context is off by default, use this to turn it on
+    show_current_context = true,
+    show_current_context_start = true,
+}

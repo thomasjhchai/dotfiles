@@ -17,4 +17,8 @@ o.hlsearch = true           -- highlight search results
 
 -- set column overlength color
 vim.cmd[[au VimEnter * highlight colorcolumn guibg=yellow]]
+vim.cmd[[
+    autocmd InsertEnter *.json setlocal conceallevel=0 concealcursor=
+    autocmd InsertLeave *.json setlocal conceallevel=0 concealcursor=inc
+]]
 

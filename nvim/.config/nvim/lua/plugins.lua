@@ -50,7 +50,7 @@ return packer.startup(function(use)
     use 'kyazdani42/nvim-tree.lua'      -- file explorer
     use 'windwp/nvim-autopairs'         -- auto pairing {}[]''""()  
     use 'akinsho/toggleterm.nvim'       -- floating terminal
-    use 'Yggdroot/indentLine'           -- display vertical indent line
+    use 'lukas-reineke/indent-blankline.nvim' -- show indent-line
     use 'akinsho/bufferline.nvim'       -- show buffer tabs
     use 'folke/zen-mode.nvim'           -- distraction free
     use 'folke/twilight.nvim'           -- use with zen mode
