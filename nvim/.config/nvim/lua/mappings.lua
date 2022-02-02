@@ -81,7 +81,7 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 
 
 -- Toggle Terminal
-map('n', '<leader>t', ':ToggleTerm<CR>', opts) -- default floating window
+map('n', '<leader>td', ':ToggleTerm<CR>', opts) -- default floating window
 map('n', '<leader>th', ':ToggleTerm direction=horizontal<CR>', opts)
 
 -- WhickKey
