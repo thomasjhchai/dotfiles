@@ -60,3 +60,5 @@ else
 	alias vi="vim"
 fi
 
+alias cat=batcat
+

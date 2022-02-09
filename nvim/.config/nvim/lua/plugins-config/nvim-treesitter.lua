@@ -8,7 +8,10 @@ require'nvim-treesitter.configs'.setup {
         'markdown',
         'bash',
         'html',
-        'css'
+        'css',
+        'go',
+        'typescript',
+        'yaml'
     },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
