@@ -2,20 +2,11 @@
 
 #if MacOS
 if [[ $OSTYPE  = darwin* ]]; then   
-	alias cddev="cd ~/Dropbox/development"
     alias paci="brew install"
     alias pacu="brew upgrade"
-    # to overwrite executing old version. Use Brew version instead os Mac default
-    # alias python="/usr/local/bin/python3" 
-    alias py="python" 
-    # alias pip="/usr/local/bin/pip3"
 #if Linux
 else  
 	alias fd="fdfind" #Ubuntu use fd-find due to some naming conflict"
-    # to overwrite executing old version
-    # alias python="python3" 
-    alias py="python" 
-    # alias pip="pip3"
 
     # check package manager for different distro
     if [ -e "/usr/bin/apt" ] ; then # Apt-based distros (Debian, Ubuntu, etc.)
@@ -60,5 +51,8 @@ else
 	alias vi="vim"
 fi
 
-alias cat=batcat
+alias cat="batcat"
+
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
 
