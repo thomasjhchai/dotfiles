@@ -4,9 +4,11 @@
 if [[ $OSTYPE  = darwin* ]]; then   
     alias paci="brew install"
     alias pacu="brew upgrade"
+    alias cat="bat"
 #if Linux
 else  
 	alias fd="fdfind" #Ubuntu use fd-find due to some naming conflict"
+    alias cat="batcat"
 
     # check package manager for different distro
     if [ -e "/usr/bin/apt" ] ; then # Apt-based distros (Debian, Ubuntu, etc.)
@@ -51,7 +53,6 @@ else
 	alias vi="vim"
 fi
 
-alias cat="batcat"
 
 alias dcu="docker-compose up -d"
 alias dcd="docker-compose down"
