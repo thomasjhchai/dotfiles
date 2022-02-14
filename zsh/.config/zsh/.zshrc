@@ -14,7 +14,8 @@ if [[ $OSTYPE  = darwin* ]]; then
 	export FZF_OS_ENV_PATH="/opt/homebrew/opt/fzf/shell/"
 	export FD_FILENAME="fd" 
 else
-    export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$HOME/go/bin:$PATH
+    export GOPATH=${XDG_DATA_HOME}/go
+    export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$GOPATH/bin:$PATH
     
     ## env for nvm (linux)
     export NVM_DIR="$HOME/.config/nvm"
