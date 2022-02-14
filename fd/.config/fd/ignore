@@ -14,8 +14,10 @@ Music/*
 OneDrive/*
 Pictures/*
 .git
+.npm
 !.vimrc
 !.zshrc
+!.zshenv
 !.alias
 !.zprofile
 !.ignore
@@ -23,5 +25,5 @@ Pictures/*
 !.gitconfig
 !.gitignore*
 !/.ssh/
-
+!/.config/
 

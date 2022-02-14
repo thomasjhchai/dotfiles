@@ -5,7 +5,7 @@ require('plugins')
 require('functions')
 
 -- colorscheme setting
-require('colorschemes-config.nightfox')
+require('colorschemes-config.gruvbox')
 
 -- packer plugins settings
 require('plugins-config.web-devicons')
