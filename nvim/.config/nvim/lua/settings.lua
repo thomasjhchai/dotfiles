@@ -15,6 +15,11 @@ o.relativenumber = true     -- add relative line numbers
 o.autoindent = true         -- auto indent new line to follow previous line indentation
 o.hlsearch = true           -- highlight search results
 
+--This part is to fix insert mode cursor missing
+o.guicursor = "a:block"
+o.guicursor = "n-v-c:blinkon0"
+o.guicursor = "i:blinkon1"
+
 -- set column overlength color
 vim.cmd[[au VimEnter * highlight colorcolumn guibg=yellow]]
 

@@ -20,27 +20,30 @@ else
     fi
 fi
 
-
-
 # set global aliases 
-#
 # directories & files
-alias ll="ls -l"
-alias lla="ls -la"
+if [ -e "/usr/bin/exa" ] ; then #use ls replace if exa exist S
+    alias ls="exa --icons"
+    alias ll="exa --long --header --icons"
+    alias la="exa --long --header --icons -a" 
+else
+    alias ll="ls -l"
+    alias lla="ls -la"
+ fi
+
 alias rm="rm -i"
 
 # sysyem
 alias ps="ps aux"
 
 # docker
-# alias dm="docker-machine"
-# alias dc ="docker-compose"
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
 
 # git 
 alias graph="git log --all --decorate --oneline --graph"
 
 # development
-
 
 # global aliases [example alias -g G="| grep" --> ls G keyword]
 alias -g G="| grep"
@@ -54,6 +57,4 @@ else
 fi
 
 
-alias dcu="docker-compose up -d"
-alias dcd="docker-compose down"
 

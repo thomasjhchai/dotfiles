@@ -1,12 +1,14 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#
+# setting up config path based on XDG specification
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
 
-#if MacOS
+# os specific configurations
 if [[ $OSTYPE  = darwin* ]]; then
+    # Disable homebrew cask from throwing github error
+    export HOMEBREW_NO_GITHUB_API=1
+
     local BREW_PATH="/opt/homebrew/bin"
     local BREW_OPT_PATH="opt/homebrew/opt"
     local NVM_PATH="$HOME/.nvm"
@@ -25,20 +27,8 @@ else
     export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
 fi
 
-
-
-# setting up config path based on XDG specification
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
-# set Right hand side promot to show hostname
-# export export RPROMPT="%F{238} %K{46}%n@%m"
-
-# Disable homebrew cask from throwing github error
-export HOMEBREW_NO_GITHUB_API=1
 
 # Fixed tmux zsh autosuggestion bug
 export TERM=xterm-256color
@@ -59,15 +49,26 @@ fi
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-#ZSH_THEME="powerlevel9k/powerlevel9k"
-# Config for powerlever9k
-#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time context dir vcs)
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv)
-#POWERLEVEL9K_STATUS_VERBOSE=false
-#POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-#POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+ZSH_THEME="spaceship"
+
+SPACESHIP_PROMPT_ORDER=(
+  host
+  dir           # Current directory section
+  git           # Git section (git_branch + git_status)
+  char
+)
+
+SPACESHIP_RPROMPT_ORDER=(
+  node
+  docker
+  exec_time
+)
+
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_HOST_SHOW_FULL=true
+SPACESHIP_GIT_BRANCH_COLOR="blue"
+SPACESHIP_NODE_COLOR="cyan"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -112,65 +113,37 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git 
 	zsh-autosuggestions
+    zsh-syntax-highlighting
     autojump
 )
-
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-#
 # Use modern completion system
- autoload -Uz compinit
-# compinit
+ autoload -U compinit; compinit
 
-# zstyle ':completion:*' auto-description 'specify: %d'
-# zstyle ':completion:*' completer _expand _complete _correct _approximate
-# zstyle ':completion:*' format 'Completing %d'
-# zstyle ':completion:*' group-name ''
-# zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
-# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*' auto-description 'specify: %d'
+#zstyle ':completion:*' completer _expand _complete _correct _approximate
+#zstyle ':completion:*' format 'Completing %d'
+#zstyle ':completion:*' group-name ''
+#zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
  zstyle ':completion:*' list-colors ''
-# zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-# zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
- zstyle ':completion:*' menu select long
-# zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-# zstyle ':completion:*' use-compctl false
-# zstyle ':completion:*' verbose true
+#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=2
+#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+#zstyle ':completion:*' use-compctl false
+#zstyle ':completion:*' verbose true
+## tab completion for PID :D
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*' force-list always
  zmodload zsh/complist
  compinit
  _comp_options+=(globdots)
-# zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-# zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+#zstyle ':completion:*:kill:*' command '/usr/bin/ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #start ssh-agent during login session
 #eval `ssh-agent`
@@ -181,7 +154,8 @@ source $ZSH/oh-my-zsh.sh
 # load fzf key-binding and auto-completion
 #
 # Check OS version and set proper enviroment
-if [ "$(uname -s)" = "Linux" ]; then
+#if [ "$(uname -s)" = "Linux" ]; then
+if [[ $OSTYPE  = linux* ]]; then
 	export FZF_OS_ENV_PATH="/usr/share/doc/fzf/examples/"
 	export FD_FILENAME="fdfind" # fix Ubuntu fd naming difference
 else
@@ -200,27 +174,26 @@ source "${FZF_OS_ENV_PATH}/key-bindings.zsh" 2> /dev/null
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND="${FD_FILENAME} --ignore-file ~/.ignore ."
+export FZF_DEFAULT_COMMAND="${FD_FILENAME} --ignore-file ${XDG_CONFIG_HOME}/fd/ignore ."
 export FZF_DEFAULT_OPTS='--no-height --no-reverse'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" 
-export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' --margin 7,20"
-#export FZF_CTRL_T_OPTS="--preview '(bat --color "always" {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+#export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' --margin 7,20"
+export FZF_CTRL_T_OPTS="--preview '(batcat --color "always" {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview' --margin 7,20"
 export FZF_ALT_C_COMMAND="${FD_FILENAME} -t d ." # search current directory only
 export FZF_COMPLETION_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' --margin 7,20" 
 
 # fzf fuzzy completion ignore files define in .ignore file
 _fzf_compgen_path() { 
-  ${FD_FILENAME} --ignore-file ~/.ignore . "$1" }
+  ${FD_FILENAME} --ignore-file ${XDG_CONFIG_HOME}/fd/ignore . "$1" }
 
 _fzf_compgen_dir() { 
-  ${FD_FILENAME} --type d --ignore-file ~/.ignore . "$1" }
+  ${FD_FILENAME} --type d --ignore-file ${XDG_CONFIG_HOME}/fd/ignore . "$1" }
 
 # display hostname beginning of the prompt 
-export PROMPT='%m'$PROMPT
+#export PROMPT='%m'$PROMPT
 
 # key bindings
 bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
