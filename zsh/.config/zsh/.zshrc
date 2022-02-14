@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # OS SPECIFIC ENV SETTING
 if [[ $OSTYPE  = darwin* ]]; then
     export BREW_PATH="/opt/homebrew/bin"
@@ -76,40 +69,13 @@ setopt HIST_REDUCE_BLANKS                   # Remove extra blanks from each comm
 
 ## Save the location of the current completion dump file.
 ## ------------------------------------------------------
-if [ -z "$ZSH_COMPDUMP" ]; then
-  ZSH_COMPDUMP="${XDG_CACHE_HOME}/.zcompdump-${HOST}-${ZSH_VERSION}"
-fi
+export ZSH_COMPDUMP="${XDG_CACHE_HOME}/.zcompdump-${HOST}-${ZSH_VERSION}"
+export ZSH_CACHE_DIR="${XDG_CACHE_HOME}"
 
 
 # SOURCE OTHER SUPPORTING FILES 
 [ -f ${ZDOTDIR}/ohmyzsh_settings ] && source ${ZDOTDIR}/ohmyzsh_settings
 [ -f ${ZDOTDIR}/zsh_aliases ] && source ${ZDOTDIR}/zsh_aliases # source alias after ohmyzsh to overide some of the builtin aliases
-
-# ZSH AUTO COMPLETIONS 
-
-autoload -U compinit; compinit
-
-#zstyle ':completion:*' auto-description 'specify: %d'
-#zstyle ':completion:*' completer _expand _complete _correct _approximate
-#zstyle ':completion:*' format 'Completing %d'
-#zstyle ':completion:*' group-name ''
-#zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
-#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=2
-#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-#zstyle ':completion:*' use-compctl false
-#zstyle ':completion:*' verbose true
-# tab completion for PID :D
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*' force-list always
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)
-#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-#zstyle ':completion:*:kill:*' command '/usr/bin/ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # FZF SETTINGS
 
