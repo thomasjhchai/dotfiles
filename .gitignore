@@ -1,0 +1,3 @@
+.zcompdump*
+p10k.zsh
+tmux-client*.log

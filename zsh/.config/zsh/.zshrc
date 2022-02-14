@@ -70,7 +70,7 @@ setopt HIST_EXPIRE_DUPS_FIRST               # When duplicates are entered, get r
 setopt HIST_IGNORE_SPACE                    # Don't enter commands into history if they start with a space
 setopt HIST_VERIFY                          # makes history substitution commands a bit nicer. I don't fully understand
 setopt SHARE_HISTORY                        # Shares history across multiple zsh sessions, in real time
-setopt HIST_IGNORE_DUPS                     # Do not write events to history that are duplicates of the immediately previous event
+setopt HIST_IGNORE_ALL_DUPS                 # Do not put duplicated commands into history list 
 setopt INC_APPEND_HISTORY                   # Add commands to history as they are typed, don't wait until shell exit
 setopt HIST_REDUCE_BLANKS                   # Remove extra blanks from each command line being added to history
 
@@ -83,7 +83,7 @@ fi
 
 # SOURCE OTHER SUPPORTING FILES 
 [ -f ${ZDOTDIR}/ohmyzsh_settings ] && source ${ZDOTDIR}/ohmyzsh_settings
-[ -f ${ZDOTDIR}/zsh_aliases ] && source ${ZDOTDIR}/zsh_aliases
+[ -f ${ZDOTDIR}/zsh_aliases ] && source ${ZDOTDIR}/zsh_aliases # source alias after ohmyzsh to overide some of the builtin aliases
 
 # ZSH AUTO COMPLETIONS 
 
