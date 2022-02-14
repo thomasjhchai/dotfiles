@@ -14,7 +14,7 @@ if [[ $OSTYPE  = darwin* ]]; then
 	export FZF_OS_ENV_PATH="/opt/homebrew/opt/fzf/shell/"
 	export FD_FILENAME="fd" 
 else
-    export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
+    export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$HOME/go/bin:$PATH
     
     ## env for nvm (linux)
     export NVM_DIR="$HOME/.config/nvm"
@@ -109,4 +109,11 @@ _fzf_compgen_dir() {
   ${FD_FILENAME} --type d --ignore-file ${XDG_CONFIG_HOME}/fd/ignore . "$1" }
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+
+# key bindings - TODO fixed where to put
+bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)

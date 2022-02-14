@@ -46,6 +46,13 @@ plugins=(
     autojump
 ) 
 
-
 source $ZSH/oh-my-zsh.sh
 
+# ZSH-AUTOSUGGESTIONS
+## key bindings 
+## -----------
+bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
+
+# ZSH-SYNTAX-HIGHLIGHTING
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+#
