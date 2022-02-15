@@ -25,5 +25,5 @@ Pictures/*
 !.gitconfig
 !.gitignore*
 !/.ssh/
-!/.config/
+!/dotfiles/*/.config/
 
