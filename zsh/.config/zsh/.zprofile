@@ -19,9 +19,10 @@ elif [[ $OSTYPE = darwin* ]]; then
      # display login screen
     neofetch
     if [ -x /opt/homebrew/bin/cowsay -a -x /opt/homebrew/bin/fortune -a -x /opt/homebrew/bin/lolcat ]; then
-        fortune | cowsay -f $(ls /opt/homebrew/share/cows/*.cow | shuf -n1)
+        fortune | cowsay -f $(ls /opt/homebrew/share/cows/*.cow | shuf -n1) | lolcat
     fi
-e   ssh-add --apple-use-keychain ~/.ssh/id_rsa
+
+    ssh-add --apple-use-keychain ~/.ssh/id_rsa
 fi
 
 
