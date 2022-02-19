@@ -1,4 +1,4 @@
-require('toggleterm').setup{
+require('toggleterm').setup {
     open_mapping = [[<c-\>]],
     size = 20,
     hide_numbers = true, -- hide the number column in toggleterm buffers
@@ -18,7 +18,7 @@ require('toggleterm').setup{
             border = 'Normal',
             background = 'Normal',
         }
-    }   
+    }
 }
 
 function _G.set_terminal_keymaps()

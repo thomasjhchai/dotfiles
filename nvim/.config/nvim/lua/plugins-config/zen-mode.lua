@@ -1,4 +1,4 @@
-require("zen-mode").setup {
+require ('zen-mode').setup {
     window = {
         width = 0.8 -- set to 80% of the editor width
     },

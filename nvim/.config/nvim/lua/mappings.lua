@@ -15,6 +15,9 @@ vim.g.mapleader = ' '   -- map <SPACE> as leader
 
 -- [[Normal Mode]] --
 
+-- Reset highlights after search
+map("n", '<CR>', ':noh<CR><CR>', opts)
+
 -- Resizing Windows
 map("n", '<S-Left>', ':vertical resize +2<CR>', opts)
 map("n", '<S-Right>', ':vertical resize -2<CR>', opts)
@@ -36,11 +39,11 @@ map('n', '<M-k>', ':tabprevious<CR>', opts)
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)
 map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', opts)
 
--- [[Insert Mode]] -- 
+-- [[Insert Mode]]
 map('i', 'jj', '<ESC>', opts)
 map('i', 'jk', '<ESC>', opts)
 
--- [[Visual Mode]] -- 
+-- [[Visual Mode]]
 
 -- Stay in indent mode
 map("v", "<", "<gv", opts)
@@ -63,7 +66,7 @@ map("x", "<M-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Misc Controls
 map('n', '<M-r>', '<cmd>lua reload_lua()<CR>', opts)    -- init.lua quick reload
-map('n', '<leader>cc', ':bufdo set cc=80<CR>', opts)    -- set all buffer column guide 
+map('n', '<leader>cc', ':bufdo set cc=80<CR>', opts)    -- set all buffer column guide
 map('n', '<leader>co', ':bufdo set cc=0<CR>', opts)     -- turn off all column guide
 
 -- Packer plugin manager
@@ -86,5 +89,4 @@ map('n', '<leader>th', ':ToggleTerm direction=horizontal<CR>', opts)
 
 -- WhickKey
 map('n', '<leader>?', ':WhichKey<CR>', opts)
-
 

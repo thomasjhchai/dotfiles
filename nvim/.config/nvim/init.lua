@@ -1,25 +1,27 @@
-require('settings')
-require('mappings')
-require('plugins')
-
-require('functions')
+require ('settings')
+require ('mappings')
+require ('plugins')
+require ('functions')
 
 -- colorscheme setting
-require('colorschemes-config.nightfox')
+require ('colorschemes-config.nightfox')
 
 -- packer plugins settings
-require('plugins-config.web-devicons')
-require('plugins-config.nvim-tree')
-require('plugins-config.indentline')
-require('plugins-config.lualine')
-require('plugins-config.bufferline')
-require('plugins-config.nvim-autopairs')
-require('plugins-config.nvim-treesitter')
-require('plugins-config.toggleterm')
-require('plugins-config.which-key')
-require('plugins-config.zen-mode')
-require('plugins-config.twilight')
-require('plugins-config.gitsigns')
+require ('plugins-config.web-devicons')
+require ('plugins-config.nvim-tree')
+require ('plugins-config.indentline')
+require ('plugins-config.lualine')
+require ('plugins-config.bufferline')
+require ('plugins-config.nvim-autopairs')
+require ('plugins-config.nvim-treesitter')
+require ('plugins-config.toggleterm')
+require ('plugins-config.which-key')
+require ('plugins-config.zen-mode')
+require ('plugins-config.twilight')
+require ('plugins-config.gitsigns')
+require ('plugins-config.nvim-lsp-installer')
+--require ('plugins-config.lspconfig')
+require ('plugins-config.cmp')
 
 -- clear screen upon quit
 vim.cmd([[

@@ -16,12 +16,12 @@ require('bufferline').setup {
     tab_size = 18,
     offsets = {
         {
-            filetype = 'NvimTree', 
-            text = 'NVIMTree', 
-            text_align = 'left' 
+            filetype = 'NvimTree',
+            text = 'NVIMTree',
+            text_align = 'left'
         }
     },
-    show_buffer_icons = true, 
+    show_buffer_icons = true,
     show_buffer_close_icons = false,
     show_close_icon = true,
     show_tab_indicators = true,
@@ -78,6 +78,5 @@ require('bufferline').setup {
         guibg = {attribute='bg',highlight='TabLineSel'}
         },
     }
-    
 }
 
