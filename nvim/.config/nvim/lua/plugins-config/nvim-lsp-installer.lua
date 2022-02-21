@@ -1,11 +1,12 @@
 local lsp_installer = require('nvim-lsp-installer')
 
 local function common_on_attach(_, bufnr)
+
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     -- Mappings
     local opts = { noremap=true, silent=true }
 
-    -- see :help vim.lsp.* for documentations
+    -- WIP -- see :help vim.lsp.* for documentations
     buf_set_keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
@@ -17,6 +18,9 @@ local function common_on_attach(_, bufnr)
     buf_set_keymap('n', '<leader>gs', ':lua vim.lsp.buf.signature_help()<CR>', opts)
     buf_set_keymap('n', '<leader>gc', ':lua vim.lsp.buf.code_action()<CR>', opts)
     buf_set_keymap('n', '<leader>gn', ':lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', '<leader>gj', ':lua vim.diagnostic.goto_next()<CR>', opts)
+    buf_set_keymap('n', '<leader>gk', ':lua vim.diagnostic.goto_prev()<CR>', opts)
+    buf_set_keymap('n', '<leader>gt', ':Telescope diagnostics<CR>', opts)
 end
 
 local server_opts = {

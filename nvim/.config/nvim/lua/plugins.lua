@@ -66,6 +66,7 @@ return packer.startup(function(use)
     use 'folke/which-key.nvim'                  -- key bindings tooltips
     use 'ggandor/lightspeed.nvim'               -- super quick keyword search
     use 'lewis6991/gitsigns.nvim'               -- git decorations
+    use {'ojroques/nvim-bufdel'}                -- improve buffer delete
 
     -- colorscheme
     use 'EdenEast/nightfox.nvim'

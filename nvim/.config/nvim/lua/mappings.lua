@@ -38,6 +38,8 @@ map('n', '<M-k>', ':tabprevious<CR>', opts)
 -- Buffers Controls
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)
 map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', opts)
+-- require BufDel plugin -> nvim-bufdel
+map('n', '<M-x>', ':BufDel<CR>', opts)
 
 -- [[Insert Mode]]
 map('i', 'jj', '<ESC>', opts)
@@ -75,7 +77,7 @@ map('n', '<leader>pu', ':PackerUpdate<CR>', opts)
 -- Telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
-map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
+map('n', '<leader>fb', ':Telescope current_buffer_fuzzy_find<CR>', opts)
 map('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
 map('n', '<leader>fc', ':Telescope colorscheme<CR>', opts)
 

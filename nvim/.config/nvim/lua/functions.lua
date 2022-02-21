@@ -5,3 +5,4 @@ function reload_lua()
     vim.notify('NVIM RELOADED')
 end
 
+

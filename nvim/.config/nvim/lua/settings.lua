@@ -15,6 +15,7 @@ o.relativenumber = true     -- add relative line numbees
 o.autoindent = true         -- auto indent new line to follow previous line indentation
 o.hlsearch = true           -- highlight search results
 o.mouse = 'a'               -- enable mouse
+o.completeopt = {"menu", "menuone", "noselect"}
 
 --This part is to fix insert mode cursor missing
 o.guicursor = "a:block"
