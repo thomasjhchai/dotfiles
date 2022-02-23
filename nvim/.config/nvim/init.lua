@@ -24,7 +24,3 @@ require ('plugins-config.nvim-lsp-installer')
 --require ('plugins-config.lspconfig')
 require ('plugins-config.cmp')
 
--- clear screen upon quit
-vim.cmd([[
-    au VimLeave * :!clear
-]])

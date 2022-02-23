@@ -77,12 +77,12 @@ map('n', '<leader>pu', ':PackerUpdate<CR>', opts)
 -- Telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
-map('n', '<leader>fb', ':Telescope current_buffer_fuzzy_find<CR>', opts)
+map('n', '<leader>fb', ':Telescope current_buffer_fuzzy_find sorting_strategy=ascending<CR>', opts)
 map('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
 map('n', '<leader>fc', ':Telescope colorscheme<CR>', opts)
 
 -- Nvim-Tree
-map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+map('n', '<leader>fe', ':NvimTreeToggle<CR>', opts)
 
 
 -- Toggle Terminal
@@ -92,3 +92,6 @@ map('n', '<leader>th', ':ToggleTerm direction=horizontal<CR>', opts)
 -- WhickKey
 map('n', '<leader>?', ':WhichKey<CR>', opts)
 
+
+-- Aliases
+vim.cmd([[cnoreabbrev clo BufDel]])

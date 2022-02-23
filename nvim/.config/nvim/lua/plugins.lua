@@ -1,4 +1,5 @@
 local fn = vim.fn
+local cmd = vim.cmd
 
 -- Automactically install packer
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -12,7 +13,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Automcommand that reloads neovim when you save plugins.lua file
-vim.cmd [[
+cmd [[
     augroup packer_user_config
         autocmd!
         autocmd BufWritePost plugins.lua source <afile> | PackerSync
@@ -37,24 +38,31 @@ packer.init {
 return packer.startup(function(use)
     -- Add plugins here
     use 'wbthomason/packer.nvim'                -- Have packer managing itself
+
+    -- LSP
     use 'neovim/nvim-lspconfig'                 -- Collection of configurations for the built-in LSP client
     use 'williamboman/nvim-lsp-installer'       -- Simplify LSP installing
+
     -- Completions
     use 'hrsh7th/cmp-nvim-lsp'                  -- Code Completion
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
-
     use 'L3MON4D3/LuaSnip'                      -- Snippets
-    use 'nvim-telescope/telescope.nvim'         -- fuzzy frinder like fzf
+
+    -- Telescope
     use 'nvim-lua/popup.nvim'                   -- An implementation of popup API
     use 'nvim-lua/plenary.nvim'                 -- Useful lua functions for plugins
-    use 'nvim-lualine/lualine.nvim'             -- nvim status bar, replace vim-air
+    use 'nvim-telescope/telescope.nvim'         -- fuzzy frinder like fzf
+
+    -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }                                           -- treesitter syntax color
+
+    use 'nvim-lualine/lualine.nvim'             -- nvim status bar, replace vim-air
     use 'kyazdani42/nvim-web-devicons'          -- providing icons for some plugins
     use 'kyazdani42/nvim-tree.lua'              -- file explorer
     use 'windwp/nvim-autopairs'                 -- auto pairing {}[]''""()
@@ -66,7 +74,7 @@ return packer.startup(function(use)
     use 'folke/which-key.nvim'                  -- key bindings tooltips
     use 'ggandor/lightspeed.nvim'               -- super quick keyword search
     use 'lewis6991/gitsigns.nvim'               -- git decorations
-    use {'ojroques/nvim-bufdel'}                -- improve buffer delete
+    use 'ojroques/nvim-bufdel'                  -- improve buffer delete
 
     -- colorscheme
     use 'EdenEast/nightfox.nvim'
