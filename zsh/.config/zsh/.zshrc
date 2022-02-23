@@ -2,8 +2,9 @@
 if [[ $OSTYPE  = darwin* ]]; then
     export BREW_PATH="/opt/homebrew/bin"
     export BREW_OPT_PATH="opt/homebrew/opt"
+    export PYTHONBIN_PATH="$HOME/Library/Python/3.9/bin"
 
-    export PATH=:$BREW_PATH:$HOME/.local/bin:$PATH
+    export PATH=$PYTHONBIN_PATH:$BREW_PATH:$HOME/.local/bin:$PATH
 
     ## env for nvm (macos)
     export NVM_DIR=$HOME/.nvm
