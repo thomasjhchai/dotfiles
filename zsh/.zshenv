@@ -10,4 +10,6 @@ skip_global_compinit=1
 
 
 
-
+if [ -f ~/.cargo/env ]; then
+    . "$HOME/.cargo/env"
+fi
