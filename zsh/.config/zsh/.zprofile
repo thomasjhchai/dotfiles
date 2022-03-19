@@ -26,3 +26,6 @@ elif [[ $OSTYPE = darwin* ]]; then
 fi
 
 
+if [ -f ~/.cargo/env ]; then
+    . "$HOME/.cargo/env"
+fi
