@@ -3,3 +3,4 @@
 tmux-client*.log
 *.bak
 /nvim/.config/nvim/plugin
+*.zsh_sessions/
