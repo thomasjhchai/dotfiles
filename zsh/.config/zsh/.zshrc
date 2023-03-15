@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # OS SPECIFIC ENV SETTING
 if [[ $OSTYPE = darwin* ]]; then
     export BREW_PATH="/opt/homebrew/bin"
@@ -121,3 +123,6 @@ bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 alias luamake=/home/tjunkie/.local/share/nvim/lsp_servers/lua-language-server/3rd/luamake/luamake
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

@@ -1,3 +1,5 @@
 .zcompdump*
 .p10k.zsh
 tmux-client*.log
+*.bak
+/nvim/.config/nvim/plugin

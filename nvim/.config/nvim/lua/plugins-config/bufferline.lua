@@ -31,50 +31,50 @@ require('bufferline').setup {
 
   highlights = {
       fill = {
-      guifg = { attribute = "fg", highlight = "#ff0000" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
+      fg = { attribute = "fg", highlight = "#ff0000" },
+      bg = { attribute = "bg", highlight = "TabLine" },
     },
     background = {
-      guifg = { attribute = "fg", highlight = "TabLine" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
+      fg = { attribute = "fg", highlight = "TabLine" },
+      bg = { attribute = "bg", highlight = "TabLine" },
     },
      buffer_selected = {
-        guifg = {attribute='fg',highlight='TabLineSel'},
-        guibg = {attribute='bg',highlight='TabLineSel'},
+        fg = {attribute='fg',highlight='TabLineSel'},
+        bg = {attribute='bg',highlight='TabLineSel'},
         gui = 'none'
         },
      buffer_visible = {
-        guifg = {attribute='fg',highlight='TabLine'},
-        guibg = {attribute='bg',highlight='TabLine'}
+        fg = {attribute='fg',highlight='TabLine'},
+        bg = {attribute='bg',highlight='TabLine'}
         },
     modified = {
-        guifg = {attribute='fg',highlight='TabLine'},
-        guibg = {attribute='bg',highlight='TabLine'}
+        fg = {attribute='fg',highlight='TabLine'},
+        bg = {attribute='bg',highlight='TabLine'}
         },
      modified_selected = {
-        guifg = {attribute='fg',highlight='TabLineSel'},
-        guibg = {attribute='bg',highlight='TabLineSel'}
+        fg = {attribute='fg',highlight='TabLineSel'},
+        bg = {attribute='bg',highlight='TabLineSel'}
         },
      modified_visible = {
-        guifg = {attribute='fg',highlight='TabLine'},
-        guibg = {attribute='bg',highlight='TabLine'}
+        fg = {attribute='fg',highlight='TabLine'},
+        bg = {attribute='bg',highlight='TabLine'}
         },
 
      separator = {
-        guifg = {attribute='bg',highlight='TabLine'},
-        guibg = {attribute='bg',highlight='TabLine'}
+        fg = {attribute='bg',highlight='TabLine'},
+        bg = {attribute='bg',highlight='TabLine'}
         },
      separator_selected = {
-        guifg = {attribute='bg',highlight='TabLineSel'},
-        guibg = {attribute='bg',highlight='TabLineSel'}
+        fg = {attribute='bg',highlight='TabLineSel'},
+        bg = {attribute='bg',highlight='TabLineSel'}
         },
      separator_visible = {
-        guifg = {attribute='bg',highlight='TabLine'},
-        guibg = {attribute='bg',highlight='TabLine'}
+        fg = {attribute='bg',highlight='TabLine'},
+        bg = {attribute='bg',highlight='TabLine'}
         },
      indicator_selected = {
-        guifg = {attribute='bg',highlight='yellow'},
-        guibg = {attribute='bg',highlight='TabLineSel'}
+        fg = {attribute='bg',highlight='yellow'},
+        bg = {attribute='bg',highlight='TabLineSel'}
         },
     }
 }
