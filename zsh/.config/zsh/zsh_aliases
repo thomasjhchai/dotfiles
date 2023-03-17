@@ -3,7 +3,7 @@
 #if MacOS
 if [[ $OSTYPE  = darwin* ]]; then   
     alias paci="brew install"
-    alias pacu="brew upgrade"
+    alias pacu="brew update && brew upgrade && brew cleanup"
     alias cat="bat"
 #if Linux
 else  
