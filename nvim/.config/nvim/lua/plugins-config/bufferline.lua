@@ -4,7 +4,10 @@ require('bufferline').setup {
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
-    indicator_icon = '▎',
+    indicator = {
+        icon = '▎', -- this should be omitted if indicator style is not 'icon'
+        style = 'icon',
+    },
     buffer_close_icon = '',
     modified_icon = '●',
     close_icon = '',
@@ -38,11 +41,6 @@ require('bufferline').setup {
       fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
     },
-     buffer_selected = {
-        fg = {attribute='fg',highlight='TabLineSel'},
-        bg = {attribute='bg',highlight='TabLineSel'},
-        gui = 'none'
-        },
      buffer_visible = {
         fg = {attribute='fg',highlight='TabLine'},
         bg = {attribute='bg',highlight='TabLine'}
