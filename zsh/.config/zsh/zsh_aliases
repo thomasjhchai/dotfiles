@@ -47,6 +47,8 @@ alias gs="git status"
 
 # development
 alias py="python3"
+alias python="python3"
+alias pip="pip3"
 
 # global aliases [example alias -g G="| grep" --> ls G keyword]
 alias -g G="| grep"
