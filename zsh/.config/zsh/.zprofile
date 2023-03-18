@@ -21,8 +21,9 @@ elif [[ $OSTYPE = darwin* ]]; then
     if [ -x /opt/homebrew/bin/cowsay -a -x /opt/homebrew/bin/fortune -a -x /opt/homebrew/bin/lolcat ]; then
         fortune | cowsay -f $(ls /opt/homebrew/share/cows/*.cow | shuf -n1) | lolcat
     fi
-
-    ssh-add --apple-use-keychain ~/.ssh/id_rsa
+    
+    # no longer needed as using 1password to manage ssh keys
+    # ssh-add --apple-use-keychain ~/.ssh/id_rsa
 fi
 
 
