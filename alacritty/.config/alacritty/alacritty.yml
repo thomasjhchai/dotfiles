@@ -1,0 +1,34 @@
+#
+#  █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗████████╗██╗   ██╗
+# ██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+# ███████║██║     ███████║██║     ██████╔╝██║   ██║      ██║    ╚████╔╝
+# ██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║      ██║     ╚██╔╝
+# ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
+# ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
+# A cross-platform, OpenGL terminal emulator.
+# https://alacritty.org
+
+live_config_reload: true
+
+env:
+  TERM: xterm-256color
+
+font:
+  normal:
+    family: "Hack Nerd Font Mono"
+    style: Regular
+  size: 13.0
+
+window:
+  opacity: 0.98
+  padding:
+    x: 14
+    y: 10
+  dynamic_padding: false
+  decorations: buttonless
+
+# NOTE: helpful hex codes
+# \x1b = escape (useful for vim-related keybindings)
+# \x02 = control-b (the default tmux prefix)
+
+#key_bindings:
