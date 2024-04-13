@@ -10,7 +10,8 @@ if [[ $OSTYPE = darwin* ]]; then
     export NVM_DIR=$HOME/.nvm
     [ -s "$BREW_OPT_PATH/nvm/nvm.sh" ] && \. "$BREW_OPT_PATH/nvm/nvm.sh"  # This loads nvm
     [ -s "$BREW_OPT_PATH/nvm/etc/bash_completion.d/nvm" ] && \. "$BREW_OPT_PATH/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-    . $NVM_DIR/nvm.sh
+    source $(brew --prefix nvm)/nvm.sh
+
     ## env for fzf (macos)
 	export FZF_OS_ENV_PATH="/opt/homebrew/opt/fzf/shell/"
 	export FD_FILENAME="fd" 
