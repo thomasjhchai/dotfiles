@@ -5,7 +5,8 @@ $ stow zsh \
        tmux \
        nvim \
        fd \ 
-       git 
+       git \
+       alacritty
 ```
 
 #All ssh and signing key handle by 1password

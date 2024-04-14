@@ -1,7 +1,17 @@
 [user]
-	name = Thomas Chai
-	email = thomas@terminaljunkie.com
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG37nlvIaombYond+0i67Raq9UHdb2IQmBiWUeddiEwm
+  name = Thomas Chai
+  email = thomas@terminaljunkie.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBZa1XFjNNQkLOCucmzDbyfOrm4YCl5cYs5EELmHc1Az
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
 [core]
 	editor = vim
 	excludesfile = ~/.config/git/gitignore_global
@@ -26,9 +36,3 @@
 	untracked = red
 [init]
 	defaultBranch = main
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-[commit]
-	gpgsign = true
