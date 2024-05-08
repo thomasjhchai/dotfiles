@@ -1,63 +1,67 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
-    test -d "${xpath}" && test -x "${xpath}" ; then 
-        echo "xcode cli installed" ; 
+# Set the directory where your dotfiles are located
+DOTFILES_DIR="$HOME/dotfiles"
+
+
+
+# Check if Xcode Command Line Tools are installed
+if ! xcode-select --install &> /dev/null; then
+    echo "Xcode Command Line Tools are not installed. Installing now..."
+
+    # Install Xcode Command Line Tools
+    sudo xcode-select --install
+
+    # Wait for the installation to complete
+    while sudo /usr/bin/xcode-select --install &> /dev/null; do
+        echo "Installing Xcode Command Line Tools..."
+        sleep 5
+    done
+
+    echo "Xcode Command Line Tools installation complete."
 else
-    echo "Installing xcode cli tools
-    xcode-select -install
-
-    echo "Installing Homebrew"
-    if ! [ -x "$(command -v brew)" ]; then
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    fi
+    echo "Xcode Command Line Tools are already installed."
 fi
 
-#<----------------Installing MacOS Apps, via Homebrew, Caks, & The App Store-------------------->
-brew=(
-    fzf
-    htop
-    neofetch
-    neovim
-    node
-    python
-    tmux
-    tree
-    wget
-)
 
-cask=(
-    spotify
-    docker
-) #GUI apps that install with cask
+# Install Homebrew if not already installed
+echo "Installing Homebrew"
+    if ! [ -x "$(command -v brew)" ]; then
+    echo "Installing Homebrew"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
 
-brew update
-brew upgrade
+# Install apps from Brewfile
+if [ -f "$DOTFILES_DIR/Brewfile" ]; then
+    echo "Installing apps from Brewfile..."
+    brew bundle --file="$DOTFILES_DIR/Brewfile"
+else
+    echo "Brewfile not found in $DOTFILES_DIR. Skipping app installation."
+fi
 
-brew install ${brew[@]} #Homebrew App Installer
-brew cask install ${cask[@]} #Casks Installer
+# Set the list of packages (directories) to be managed by Stow
+PACKAGES=(nvim tmux zsh)
 
-cd ~
-mkdir Repo
-cd Repo
-git clone https://github.com/makccr/dot
+# Function to link a package using Stow
+link_package() {
+    local package="$1"
+    
+    # Check if the package directory exists
+    if [ ! -d "$DOTFILES_DIR/$package" ]; then
+        echo "Error: Package directory '$package' not found in '$DOTFILES_DIR'"
+        return 1
+    fi
+    
+    # Link the package
+    stow -vt "$HOME" "$package" -d "$DOTFILES_DIR"
+    echo "Linked package '$package'"
+}
 
-ln -s ~/Repo/dot/.config/ ~/.config
-ln -s ~/Repo/dot/.tmux.conf ~/.tmux.conf
-ln -s ~/Repo/dot/.bashrc ~/.bashrc
-ln -s ~/Repo/dot/.profile ~/.profile
-ln -s ~/Repo/dot/.bin/ ~/.bin
-ln -s ~/Repo/dot/.gitconfig ~/.gitconfig
+# Link all packages
+echo "Linking all packages..."
+for package in "${PACKAGES[@]}"; do
+    link_package "$package"
+done
 
-#Installing Vim-plug
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-echo 'Run ":PlugInstall" to install NeoVim Plugins"
-nvim +PlugInstall +qall
-
-#echo 'Installation Complete'
-echo 'Now you can make an SSH key:'
-echo "Press CONTROL+C, if you don't want to"
-
-ssh-keygen -t rsa -b 4096
+echo "All packages have been linked."
+echo "All installation steps have been completed."
