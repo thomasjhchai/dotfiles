@@ -92,7 +92,7 @@ if [ ! -d "~/.oh-my-zsh/plugins/zsh-autosuggestions" ]; then
     echo "zsh-autosuggestions installed"
     echo "zsh-autosuggestions enabled"
 else
-echo "zsh-autosuggestions already exist"
+    echo "zsh-autosuggestions already exist"
 fi
 
 # install zsh-syntax-highlighting
@@ -101,7 +101,7 @@ if [ ! -d "~/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
     echo "zsh-syntax-highlighting installed"
     echo "zsh-syntax-highlighting enabled"
 else
-echo "zsh-syntax-highlighting already exist"
+    echo "zsh-syntax-highlighting already exist"
 fi
 
 # install autojump
@@ -110,7 +110,7 @@ if [ ! -d "~/.oh-my-zsh/plugins/autojump" ]; then
     echo "autojump installed"
     echo "autojump enabled"
 else
-echo "autojump already exist"
+    echo "autojump already exist"
 fi
 
 # install ohmyzsh spaceship theme
@@ -119,7 +119,7 @@ if [ ! -d "~/.oh-my-zsh/themes/spaceship-prompt" ]; then
     echo "spaceship-prompt installed"
     echo "spaceship-prompt enabled"
 else
-echo "spaceship already exist"
+    echo "spaceship already exist"
 fi
 
 
