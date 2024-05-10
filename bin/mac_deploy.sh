@@ -76,11 +76,11 @@ done
 echo "All packages have been linked."
 echo "All installation steps have been completed."
 
-# TODO: double check below
 
 # install ohmyzsh if .ohmyzsh folder doesn't exist
 if [ ! -d "~/.oh-my-zsh" ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \
+--keep-zshrc
     echo "oh-my-zsh installed"
 else
     echo "oh-my-zsh already installed"
@@ -106,7 +106,7 @@ fi
 
 # install autojump
 if [ ! -d "~/.oh-my-zsh/plugins/autojump" ]; then
-    git clone https://github.com/wting/autojump.git "$HOME/.oh-my-zsh/plugins/autojump"
+    git clone https://github.com/wting/autojump.git "$HOME/.oh-my-zsh/custom/plugins/autojump"
     echo "autojump installed"
     echo "autojump enabled"
 else
@@ -115,8 +115,8 @@ fi
 
 # install ohmyzsh spaceship theme
 if [ ! -d "~/.oh-my-zsh/themes/spaceship-prompt" ]; then
-    git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-    ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+    git clone https://github.com/spaceship-prompt/spaceship-prompt.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt --depth=1
+    ln -s ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme
     echo "spaceship-prompt installed"
     echo "spaceship-prompt enabled"
 else
