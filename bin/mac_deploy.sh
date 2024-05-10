@@ -36,11 +36,14 @@ echo "Installing Homebrew"
     echo "Installing Homebrew"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/tjunkie/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+source ~/.zprofile
 
 # Install apps from Brewfile
-if [ -f "$HOME/Brewfile" ]; then
+if [ -f "$DOTFILES_DIR/Brewfile" ]; then
     echo "Installing apps from Brewfile..."
-    brew bundle --file="$HOME/Brewfile"
+    brew bundle --file="$DOTFILES_DIR/Brewfile"
 else
     echo "Brewfile not found in $HOME. Skipping app installation."
 fi
@@ -76,39 +79,47 @@ echo "All installation steps have been completed."
 # TODO: double check below
 
 # install ohmyzsh if .ohmyzsh folder doesn't exist
-if [! -d "$HOME/.oh-my-zsh" ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ ! -d "~/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     echo "oh-my-zsh installed"
 else
     echo "oh-my-zsh already installed"
 fi
 
 # install zsh-autosuggestions
-if [! -d "$HOME/.oh-my-zsh/plugins/zsh-autosuggestions" ]; then
+if [ ! -d "~/.oh-my-zsh/plugins/zsh-autosuggestions" ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     echo "zsh-autosuggestions installed"
     echo "zsh-autosuggestions enabled"
+else
+echo "zsh-autosuggestions already exist"
 fi
 
 # install zsh-syntax-highlighting
-if [! -d "$HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
+if [ ! -d "~/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-
     echo "zsh-syntax-highlighting installed"
     echo "zsh-syntax-highlighting enabled"
+else
+echo "zsh-syntax-highlighting already exist"
 fi
 
 # install autojump
-if [! -d "$HOME/.oh-my-zsh/plugins/autojump" ]; then
+if [ ! -d "~/.oh-my-zsh/plugins/autojump" ]; then
     git clone https://github.com/wting/autojump.git "$HOME/.oh-my-zsh/plugins/autojump"
     echo "autojump installed"
     echo "autojump enabled"
+else
+echo "autojump already exist"
 fi
 
 # install ohmyzsh spaceship theme
-if [! -d "$HOME/.oh-my-zsh/themes/spaceship-prompt" ]; then
+if [ ! -d "~/.oh-my-zsh/themes/spaceship-prompt" ]; then
     git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt"
     echo "spaceship-prompt installed"
     echo "spaceship-prompt enabled"
+else
+echo "spaceship already exist"
 fi
 
 
