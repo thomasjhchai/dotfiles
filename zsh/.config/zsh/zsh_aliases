@@ -22,10 +22,10 @@ fi
 
 # set global aliases 
 # directories & files
-if [ -e "/usr/bin/exa" ] || [ -e "/opt/homebrew/bin/exa" ]; then #use ls replace if exa exist S
-    alias ls="exa --icons"
-    alias ll="exa --long --header --icons"
-    alias la="exa --long --header --icons -a" 
+if [ -e "/usr/bin/eza" ] || [ -e "/opt/homebrew/bin/eza" ]; then #use ls replace if exa exist S
+    alias ls="eza --icons"
+    alias ll="eza --long --header --icons"
+    alias la="eza --long --header --icons -a" 
 else
     alias ll="ls -l"
     alias lla="ls -la"
