@@ -35,6 +35,7 @@ fi
 ## -----------------------------------
 export ZSH=$HOME/.oh-my-zsh
 
+
 ## Fixed tmux zsh autosuggestion bug
 ## ---------------------------------
 export TERM=xterm-256color
@@ -78,7 +79,9 @@ export ZSH_CACHE_DIR="${XDG_CACHE_HOME}"
 
 # SOURCE OTHER SUPPORTING FILES 
 [ -f ${ZDOTDIR}/ohmyzsh_settings ] && source ${ZDOTDIR}/ohmyzsh_settings
+
 [ -f ${ZDOTDIR}/zsh_aliases ] && source ${ZDOTDIR}/zsh_aliases # source alias after ohmyzsh to overide some of the builtin aliases
+
 
 # FZF SETTINGS
 
@@ -121,4 +124,4 @@ bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-alias luamake=/home/tjunkie/.local/share/nvim/lsp_servers/lua-language-server/3rd/luamake/luamake
+# alias luamake=/home/tjunkie/.local/share/nvim/lsp_servers/lua-language-server/3rd/luamake/luamake

@@ -97,7 +97,7 @@ fi
 
 # install zsh-syntax-highlighting
 if [ ! -d "~/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     echo "zsh-syntax-highlighting installed"
     echo "zsh-syntax-highlighting enabled"
 else
@@ -115,7 +115,8 @@ fi
 
 # install ohmyzsh spaceship theme
 if [ ! -d "~/.oh-my-zsh/themes/spaceship-prompt" ]; then
-    git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt"
+    git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+    ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
     echo "spaceship-prompt installed"
     echo "spaceship-prompt enabled"
 else
