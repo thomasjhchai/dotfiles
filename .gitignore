@@ -5,3 +5,4 @@ tmux-client*.log
 /nvim/.config/nvim/plugin
 *.zsh_sessions/
 Brewfile.lock.json
+zsh/.config/zsh/.zsh_history
