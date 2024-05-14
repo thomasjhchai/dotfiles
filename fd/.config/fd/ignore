@@ -26,4 +26,5 @@ Pictures/*
 !.gitignore*
 !/.ssh/
 !/dotfiles/*/.config/
+!zcompdump*
 
