@@ -125,3 +125,7 @@ bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # alias luamake=/home/tjunkie/.local/share/nvim/lsp_servers/lua-language-server/3rd/luamake/luamake
+
+# start up terminal screen
+neofetch
+

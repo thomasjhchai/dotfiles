@@ -2,7 +2,7 @@
 .p10k.zsh
 tmux-client*.log
 *.bak
-/nvim/.config/nvim/plugin
 *.zsh_sessions/
 Brewfile.lock.json
 zsh/.config/zsh/.zsh_history
+lazy-lock.json

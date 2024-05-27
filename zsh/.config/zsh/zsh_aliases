@@ -14,6 +14,10 @@ else
     if [ -e "/usr/bin/apt" ] ; then # Apt-based distros (Debian, Ubuntu, etc.)
         alias paci="sudo apt install"
         alias pacu="sudo apt update && sudo apt upgrade"
+        if [ -e "/usr/bin/nala" ]; then # if nala exist, use nala to install packages instead of apt
+            alias paci="sudo nala install"
+            alias pacu="sudo nala update && sudo nala upgrade"
+        fi
     elif [ -e "/usr/bin/pacman" ] ; then # Arch Linux
         alias paci="sudo pacman -S"
         alias pacu="sudo pacman -Syu"
@@ -33,8 +37,13 @@ fi
 
 alias rm="rm -i"
 
-# sysyem
-alias ps="ps aux"
+# system
+
+if [ -e "~/.cargo/bin/procs" ]; then
+    alias ps="procs"
+else
+    alias ps="ps aux"
+fi
 
 # docker
 alias dcu="docker-compose up -d"
@@ -56,9 +65,9 @@ alias -g M="| more"
 
 # check if neovim exist
 if  type "nvim" > /dev/null; then
-	alias vi="nvim"
+	alias v="nvim"
 else
-	alias vi="vim"
+	alias v="vim"
 fi
 
 

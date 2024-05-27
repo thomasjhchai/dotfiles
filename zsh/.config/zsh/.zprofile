@@ -1,9 +1,12 @@
 if [[ $OSTYPE = linux* ]]; then
 	### START-Keychain ###
 	## Let  re-use ssh-agent and/or gpg-agent between logins
-	export HOSTNAME="$(uname -n)"
-	/usr/bin/keychain $HOME/.ssh/id_rsa
-	source $HOME/.keychain/$HOSTNAME-sh
+	
+    ## NO LONGER NEEDED AS USING 1PASSWORD
+
+    #export HOSTNAME="$(uname -n)"
+	#/usr/bin/keychain $HOME/.ssh/id_rsa
+	#source $HOME/.keychain/$HOSTNAME-sh
 	#### End-Keychain ###
 
     # display login screen
