@@ -36,3 +36,6 @@ else
     # Set battery charge to specific start and stop percentages
     set_charge_level $1 $2
 fi
+
+# restart tlp service
+sudo systemctl reload tlp
