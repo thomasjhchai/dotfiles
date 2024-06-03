@@ -2,12 +2,15 @@ if [[ $OSTYPE = linux* ]]; then
 	### START-Keychain ###
 	## Let  re-use ssh-agent and/or gpg-agent between logins
 	
-    ## NO LONGER NEEDED AS USING 1PASSWORD
-
-    #export HOSTNAME="$(uname -n)"
-	#/usr/bin/keychain $HOME/.ssh/id_rsa
-	#source $HOME/.keychain/$HOSTNAME-sh
-	#### End-Keychain ###
+    # Check if 1Password is installed on Linux, and if not, use keychain to manage SSH keys.
+    if [ "$(command -v op)" ]; then
+        echo "1Password is installed on Linux"
+    else
+        if [ "$(command -v keychain)" ]; then
+            eval $(keychain --eval --quiet $SSH_KEYS)
+            echo "keychain added"
+        fi
+    fi
 
     # display login screen
     neofetch
@@ -23,8 +26,6 @@ elif [[ $OSTYPE = darwin* ]]; then
         fortune | cowsay -f $(ls /opt/homebrew/share/cows/*.cow | shuf -n1) | lolcat
     fi
     
-    # no longer needed as using 1password to manage ssh keys
-    # ssh-add --apple-use-keychain ~/.ssh/id_rsa
 fi
 
 
