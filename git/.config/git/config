@@ -1,8 +1,8 @@
 [user]
   name = Thomas Chai
   email = thomas@terminaljunkie.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBZa1XFjNNQkLOCucmzDbyfOrm4YCl5cYs5EELmHc1Az
-
+#  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBZa1XFjNNQkLOCucmzDbyfOrm4YCl5cYs5EELmHc1Az
+  signingkey =  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGqAu2II5rHbXg1efHNBwbMkG2fKcoTwj1GQBqy4B+rm
 [gpg]
   format = ssh
 
