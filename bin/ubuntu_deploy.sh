@@ -30,7 +30,8 @@ sudo nala install \
     cowsay \
     fd-find \
     fzf \
-    bat
+    bat \
+    tree
 
 
 

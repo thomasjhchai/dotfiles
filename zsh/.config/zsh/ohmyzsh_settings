@@ -48,6 +48,7 @@ else
     SPACESHIP_RPROMPT_ORDER=(
       node
       docker
+      python
       exec_time
     )
     
@@ -55,6 +56,8 @@ else
     SPACESHIP_HOST_SHOW_FULL=true
     SPACESHIP_GIT_BRANCH_COLOR="blue"
     SPACESHIP_NODE_COLOR="cyan"
+    SPACESHIP_PYTHON_SHOW=true
+    SPACESHIP_PYTHON_ASYNC=true
     
 fi
 

@@ -124,4 +124,9 @@ bindkey '^ ' autosuggest-accept # control-space to autocomplete suggestion
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-
+# pyenv activate
+export PYENV_ROOT="${HOME}/.pyenv"
+[[ -d "${PYENV_ROOT}/bin" ]] && export PATH="${PYENV_ROOT}/bin:${PATH}"
+eval "$(pyenv init --path)"
+# Load pyenv-virtualenv automatically
+# eval "$(pyenv virtualenv-init -)"

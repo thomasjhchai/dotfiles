@@ -1,6 +1,7 @@
 if [[ $OSTYPE = linux* ]]; then
 	### START-Keychain ###
 	## Let  re-use ssh-agent and/or gpg-agent between logins
+    export SSH_KEYS=~/.ssh/gh_thomasjhchai
 	
     # Check if 1Password is installed on Linux, and if not, use keychain to manage SSH keys.
     if [ "$(command -v op)" ]; then
