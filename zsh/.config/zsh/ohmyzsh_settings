@@ -21,6 +21,7 @@ if [[ $OSTYPE  = darwin* ]]; then
       host
       dir           # Current directory section
       git           # Git section (git_branch + git_status)
+      venv
       char
     )
     
@@ -34,6 +35,12 @@ if [[ $OSTYPE  = darwin* ]]; then
     SPACESHIP_HOST_SHOW_FULL=true
     SPACESHIP_GIT_BRANCH_COLOR="blue"
     SPACESHIP_NODE_COLOR="cyan"
+
+    # Customize the virtualenv section
+    SPACESHIP_VENV_SHOW=true
+    SPACESHIP_VENV_PREFIX="(venv) "
+    #SPACESHIP_VENV_SYMBOL="🐍 "
+    SPACESHIP_VENV_COLOR="green"
  
 else    
     ZSH_THEME="spaceship"
@@ -42,6 +49,7 @@ else
       host
       dir           # Current directory section
       git           # Git section (git_branch + git_status)
+      venv
       char
     )
     
@@ -58,6 +66,13 @@ else
     SPACESHIP_NODE_COLOR="cyan"
     SPACESHIP_PYTHON_SHOW=true
     SPACESHIP_PYTHON_ASYNC=true
+
+
+    # Customize the virtualenv section
+    SPACESHIP_VENV_SHOW=true
+    SPACESHIP_VENV_PREFIX="(venv) "
+    #SPACESHIP_VENV_SYMBOL="🐍 "
+    SPACESHIP_VENV_COLOR="green"
     
 fi
 
