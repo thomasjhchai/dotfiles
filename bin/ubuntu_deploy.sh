@@ -16,7 +16,8 @@ sudo nala install \
 	xz-utils \
 	tk-dev \
 	libffi-dev \
-	liblzma-dev
+	liblzma-dev \
+	libpq-dev
 
 sudo nala install \
 	keychain \
