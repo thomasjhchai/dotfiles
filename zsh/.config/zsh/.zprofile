@@ -14,7 +14,7 @@ if [[ $OSTYPE = linux* ]]; then
     fi
 
     # display login screen
-    neofetch
+    fastfetch
     if [ -x /usr/games/cowsay -a -x /usr/games/fortune -a -x /usr/games/lolcat ]; then
         fortune | cowsay -f $(ls /usr/share/cowsay/cows | shuf -n1) | lolcat
     fi
@@ -22,7 +22,7 @@ elif [[ $OSTYPE = darwin* ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     #
      # display login screen
-    neofetch
+    fastfetch
     if [ -x /opt/homebrew/bin/cowsay -a -x /opt/homebrew/bin/fortune -a -x /opt/homebrew/bin/lolcat ]; then
         fortune | cowsay -f $(ls /opt/homebrew/share/cowsay/cows/*.cow | shuf -n1) | lolcat
     fi
@@ -33,3 +33,7 @@ fi
 if [ -f ~/.cargo/env ]; then
     . "$HOME/.cargo/env"
 fi
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
