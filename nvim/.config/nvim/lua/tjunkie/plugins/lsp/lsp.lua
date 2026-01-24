@@ -6,6 +6,7 @@ return { -- LSP Configuration & Plugins
         -- Automatically install LSPs to stdpath for neovim
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
+        {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 
         -- Useful status updates for LSP
         'j-hui/fidget.nvim',
