@@ -24,10 +24,11 @@ return { -- LSP Configuration & Plugins
             lsp_zero.default_keymaps({ buffer = bufnr })
         end)
 
+        require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = {
                 'pyright', -- python
-                'tsserver', -- js, ts
+                'ts_ls', -- js, ts
             },
             handlers = {
                 lsp_zero.default_setup,
@@ -36,19 +37,17 @@ return { -- LSP Configuration & Plugins
                     local lua_opts = lsp_zero.nvim_lua_ls()
                     require('lspconfig').lua_ls.setup(lua_opts)
                 end,
+                pyright = function()
+                    local util = require("lspconfig/util")
+                    local path = util.path
+                    require('lspconfig').pyright.setup({
+                        before_init = function(_, config)
+                            local default_venv_path = path.join(vim.env.HOME, "virtualenvs", "nvim-venv", "bin", "python")
+                            config.settings.python.pythonPath = default_venv_path
+                        end,
+                    })
+                end,
             }
         })
-
-        -- Python environment
-        local util = require("lspconfig/util")
-        local path = util.path
-        require('lspconfig').pyright.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-            before_init = function(_, config)
-                default_venv_path = path.join(vim.env.HOME, "virtualenvs", "nvim-venv", "bin", "python")
-                config.settings.python.pythonPath = default_venv_path
-            end,
-        }
     end
 }
