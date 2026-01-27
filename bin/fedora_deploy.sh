@@ -1,25 +1,9 @@
 #!/bin/bash
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install nala 
+sudo dnf update -y
 
-sudo nala install \
-	build-essential \
-	zlib1g-dev \
-    libssl-dev \
-	libbz2-dev \
-	libreadline-dev \
-	libsqlite3-dev \
-	llvm \
-	libncurses5-dev \
-	libncursesw5-dev \
-	xz-utils \
-	tk-dev \
-	libffi-dev \
-	liblzma-dev \
-	libpq-dev
 
-sudo nala install \
+sudo dnf install \
 	keychain \
 	neofetch \
     zsh	\
