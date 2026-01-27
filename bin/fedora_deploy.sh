@@ -12,23 +12,24 @@ fi
 
 sudo dnf update -y
 
+DNF_PACKAGES=(
+    keychain fastfetch zsh autojump stow 
+    exa fortune lolcat cowsay fd-find 
+    fzf bat tree
+)
 
-sudo dnf install \
-	keychain \
-	fastfetch \
-    zsh	\
-	autojump \
-	stow \
-	lsd \
-    fortune \
-    lolcat \
-    cowsay \
-    fd-find \
-    fzf \
-    bat \
-    tree
+echo "Starting installation..."
 
-PACKAGES=(fd git nvim tmux zsh)
+for pkg in "${DNF_PACKAGES[@]}"; do
+    echo "Installing $pkg..."
+    # --skip-broken handles dependency issues, -y handles prompts
+    sudo dnf install -y "$pkg" || echo "⚠️  Failed to install $pkg, skipping..."
+done
+
+echo "✅ Installation process complete."
+
+
+STOW_PACKAGES=(fd git nvim tmux zsh)
 
 # Function to link a package using Stow
 link_package() {
@@ -47,7 +48,7 @@ link_package() {
 
 # Link all packages
 echo "Linking all packages..."
-for package in "${PACKAGES[@]}"; do
+for package in "${STOW_PACKAGES[@]}"; do
     link_package "$package"
 done
 
