@@ -1,4 +1,14 @@
 #!/bin/bash
+# Set the directory where your dotfiles are located
+DOTFILES_DIR="$HOME/dotfiles"
+
+# Make a dotfiles directory if it doesn't already exist
+if [! -d "$DOTFILES_DIR" ]; then
+    mkdir -p "$DOTFILES_DIR"
+    echo "Created $DOTFILES_DIR"
+else
+    echo "$DOTFILES_DIR already exists"
+fi
 
 sudo dnf update -y
 
@@ -9,7 +19,7 @@ sudo dnf install \
     zsh	\
 	autojump \
 	stow \
-	exa \
+	lsd \
     fortune \
     lolcat \
     cowsay \
@@ -18,7 +28,37 @@ sudo dnf install \
     bat \
     tree
 
+PACKAGES=(fd git nvim tmux zsh)
 
+# Function to link a package using Stow
+link_package() {
+    local package="$1"
+    
+    # Check if the package directory exists
+    if [ ! -d "$DOTFILES_DIR/$package" ]; then
+        echo "Error: Package directory '$package' not found in '$DOTFILES_DIR'"
+        return 1
+    fi
+    
+    # Link the package
+    stow -vt "$HOME" "$package" -d "$DOTFILES_DIR"
+    echo "Linked package '$package'"
+}
+
+# Link all packages
+echo "Linking all packages..."
+for package in "${PACKAGES[@]}"; do
+    link_package "$package"
+done
+
+echo "All packages have been linked."
+echo "All installation steps have been completed."
+
+# Link all packages
+echo "Linking all packages..."
+for package in "${PACKAGES[@]}"; do
+    link_package "$package"
+done
 
 # install ohmyzsh if .ohmyzsh folder doesn't exist
 if [ ! -d "~/.oh-my-zsh" ]; then
