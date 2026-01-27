@@ -5,11 +5,11 @@ sudo dnf update -y
 
 sudo dnf install \
 	keychain \
-	neofetch \
+	fastfetch \
     zsh	\
 	autojump \
 	stow \
-	eza \
+	exa \
     fortune \
     lolcat \
     cowsay \
@@ -66,5 +66,6 @@ else
     echo "spaceship already exist"
 fi
 
+chsh -s $(which zsh) $USER
 
 
