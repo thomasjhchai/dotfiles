@@ -14,8 +14,8 @@ sudo dnf update -y
 
 DNF_PACKAGES=(
     keychain fastfetch zsh autojump stow 
-    exa fortune lolcat cowsay fd-find 
-    fzf bat tree
+    lsd fortune lolcat cowsay fd-find 
+    fzf bat tree nvtop s-tui btop lm_sensors 1password moby-engine docker-compose tailscale ghostty neovim
 )
 
 echo "Starting installation..."
@@ -27,6 +27,9 @@ for pkg in "${DNF_PACKAGES[@]}"; do
 done
 
 echo "✅ Installation process complete."
+# Start and enable the service
+echo "Enabling and starting Docker service..."
+sudo systemctl enable --now docker
 
 
 STOW_PACKAGES=(fd git nvim tmux zsh)
